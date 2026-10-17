@@ -1,0 +1,212 @@
+#include "main.h"
+#include "spi_test.h"
+#include "st7796.h"
+
+extern SPI_HandleTypeDef hspi1;
+
+void ST7796_Init(void)
+{
+    /* Hardware reset */
+    HAL_GPIO_WritePin(
+        LCD_RST_GPIO_Port,
+        LCD_RST_Pin,
+        GPIO_PIN_RESET);
+
+    HAL_Delay(20);
+
+    HAL_GPIO_WritePin(
+        LCD_RST_GPIO_Port,
+        LCD_RST_Pin,
+        GPIO_PIN_SET);
+
+    HAL_Delay(120);
+
+    /* Software reset */
+    LCD_WriteCommand(0x01);
+    HAL_Delay(120);
+
+    /* Sleep out */
+    LCD_WriteCommand(0x11);
+    HAL_Delay(120);
+
+    /* Enable extension command set, part 1 */
+    LCD_WriteCommand(0xF0);
+    LCD_WriteData(0xC3);
+
+    /* Enable extension command set, part 2 */
+    LCD_WriteCommand(0xF0);
+    LCD_WriteData(0x96);
+
+    /* Memory access control */
+    LCD_WriteCommand(0x36);
+    LCD_WriteData(0x48);
+
+    /* RGB565, 16-bit pixel format */
+    LCD_WriteCommand(0x3A);
+    LCD_WriteData(0x55);
+
+    /* Column inversion */
+    LCD_WriteCommand(0xB4);
+    LCD_WriteData(0x01);
+
+    /* Display function control */
+    LCD_WriteCommand(0xB6);
+    LCD_WriteData(0x80);
+    LCD_WriteData(0x02);
+    LCD_WriteData(0x3B);
+
+    /* Display output control adjustment */
+    LCD_WriteCommand(0xE8);
+    LCD_WriteData(0x40);
+    LCD_WriteData(0x8A);
+    LCD_WriteData(0x00);
+    LCD_WriteData(0x00);
+    LCD_WriteData(0x29);
+    LCD_WriteData(0x19);
+    LCD_WriteData(0xA5);
+    LCD_WriteData(0x33);
+
+    /* Power control 2 */
+    LCD_WriteCommand(0xC1);
+    LCD_WriteData(0x06);
+
+    /* Power control 3 */
+    LCD_WriteCommand(0xC2);
+    LCD_WriteData(0xA7);
+
+    /* VCOM control */
+    LCD_WriteCommand(0xC5);
+    LCD_WriteData(0x18);
+
+    HAL_Delay(120);
+
+    /* Positive gamma */
+    LCD_WriteCommand(0xE0);
+    LCD_WriteData(0xF0);
+    LCD_WriteData(0x09);
+    LCD_WriteData(0x0B);
+    LCD_WriteData(0x06);
+    LCD_WriteData(0x04);
+    LCD_WriteData(0x15);
+    LCD_WriteData(0x2F);
+    LCD_WriteData(0x54);
+    LCD_WriteData(0x42);
+    LCD_WriteData(0x3C);
+    LCD_WriteData(0x17);
+    LCD_WriteData(0x14);
+    LCD_WriteData(0x18);
+    LCD_WriteData(0x1B);
+
+    /* Negative gamma */
+    LCD_WriteCommand(0xE1);
+    LCD_WriteData(0xE0);
+    LCD_WriteData(0x09);
+    LCD_WriteData(0x0B);
+    LCD_WriteData(0x06);
+    LCD_WriteData(0x04);
+    LCD_WriteData(0x03);
+    LCD_WriteData(0x2B);
+    LCD_WriteData(0x43);
+    LCD_WriteData(0x42);
+    LCD_WriteData(0x3B);
+    LCD_WriteData(0x16);
+    LCD_WriteData(0x14);
+    LCD_WriteData(0x17);
+    LCD_WriteData(0x1B);
+
+    HAL_Delay(120);
+
+    /* Disable extension command set */
+    LCD_WriteCommand(0xF0);
+    LCD_WriteData(0x3C);
+
+    LCD_WriteCommand(0xF0);
+    LCD_WriteData(0x69);
+
+    HAL_Delay(120);
+
+    /* Display on */
+    LCD_WriteCommand(0x29);
+    HAL_Delay(100);
+}
+
+void ST7796_FillScreen(uint16_t color)
+{
+    uint8_t buffer[512];
+
+    uint8_t highByte = (uint8_t)(color >> 8);
+    uint8_t lowByte  = (uint8_t)(color & 0xFF);
+
+    /*
+     * Fill the buffer with 256 RGB565 pixels.
+     * Each pixel occupies two bytes.
+     */
+    for (uint16_t i = 0; i < sizeof(buffer); i += 2)
+    {
+        buffer[i]     = highByte;
+        buffer[i + 1] = lowByte;
+    }
+
+    /* Column address: 0 through 319 */
+    LCD_WriteCommand(0x2A);
+    LCD_WriteData(0x00);
+    LCD_WriteData(0x00);
+    LCD_WriteData(0x01);
+    LCD_WriteData(0x3F);
+
+    /* Row address: 0 through 479 */
+    LCD_WriteCommand(0x2B);
+    LCD_WriteData(0x00);
+    LCD_WriteData(0x00);
+    LCD_WriteData(0x01);
+    LCD_WriteData(0xDF);
+
+    /* Begin display-memory write */
+    LCD_WriteCommand(0x2C);
+
+    /*
+     * Select LCD and enter data mode.
+     * Keep CS low throughout the complete pixel transfer.
+     */
+    HAL_GPIO_WritePin(
+        LCD_CS_GPIO_Port,
+        LCD_CS_Pin,
+        GPIO_PIN_RESET);
+
+    HAL_GPIO_WritePin(
+        LCD_RS_GPIO_Port,
+        LCD_RS_Pin,
+        GPIO_PIN_SET);
+
+    /*
+     * 320 × 480 = 153,600 pixels.
+     * Each 512-byte transfer contains 256 pixels.
+     * 153,600 / 256 = 600 transfers.
+     */
+    for (uint16_t block = 0; block < 600; block++)
+    {
+        HAL_StatusTypeDef status;
+
+        status = HAL_SPI_Transmit(
+            &hspi1,
+            buffer,
+            sizeof(buffer),
+            1000);
+
+        if (status != HAL_OK)
+        {
+            HAL_GPIO_WritePin(
+                LCD_CS_GPIO_Port,
+                LCD_CS_Pin,
+                GPIO_PIN_SET);
+
+            Error_Handler();
+        }
+    }
+
+    /* End LCD transaction */
+    HAL_GPIO_WritePin(
+        LCD_CS_GPIO_Port,
+        LCD_CS_Pin,
+        GPIO_PIN_SET);
+}

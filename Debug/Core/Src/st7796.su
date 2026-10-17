@@ -1,0 +1,2 @@
+../Core/Src/st7796.c:7:6:ST7796_Init	8	static
+../Core/Src/st7796.c:133:6:ST7796_FillScreen	536	static
