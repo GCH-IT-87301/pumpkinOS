@@ -168,26 +168,70 @@ int main(void)
 
   ST7796_FillScreen(ST7796_BLACK);
 
-  ST7796_FillScreen(ST7796_BLACK);
+  ST7796_DrawText(
+      5,
+      10,
+      "UPPERCASE:",
+      ST7796_GREEN,
+      2);
 
   ST7796_DrawText(
-      10,
-      10,
+      5,
+      30,
       "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-      ST7796_GREEN,
+      ST7796_WHITE,
       2);
 
   ST7796_DrawText(
-      10,
-      35,
-      "0123456789",
-      ST7796_GREEN,
-      2);
-
-  ST7796_DrawText(
-      10,
+      5,
       60,
-      ".,:;-_/\\()[]<>=!?",
+      "lowercase:",
+      ST7796_GREEN,
+      2);
+
+  ST7796_DrawText(
+      5,
+      80,
+      "abcdefghijklmnopqrstuvwxyz",
+      ST7796_WHITE,
+      2);
+
+  ST7796_DrawText(
+      5,
+      110,
+      "numbers:",
+      ST7796_GREEN,
+      2);
+
+  ST7796_DrawText(
+      5,
+      130,
+      "0123456789",
+      ST7796_WHITE,
+      2);
+
+  ST7796_DrawText(
+      5,
+      160,
+      "symbols:",
+      ST7796_GREEN,
+      2);
+
+  ST7796_DrawText(
+      5,
+      180,
+      ".,:;-_/\\\\()[]<>=!?",
+      ST7796_WHITE,
+      2);
+
+  ST7796_DrawText(
+      5,
+      210,
+      "PumpkinOS v0.1\n"
+      "Booting...\n"
+      "Display OK\n"
+      "SPI OK\n"
+      "Ready>\n",
       ST7796_GREEN,
       2);
 
