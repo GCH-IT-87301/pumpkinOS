@@ -168,12 +168,28 @@ int main(void)
 
   ST7796_FillScreen(ST7796_BLACK);
 
-  ST7796_DrawChar(
-      100,
-      100,
-      'A',
-      ST7796_WHITE,
-	  1);
+  ST7796_FillScreen(ST7796_BLACK);
+
+  ST7796_DrawText(
+      10,
+      10,
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      ST7796_GREEN,
+      2);
+
+  ST7796_DrawText(
+      10,
+      35,
+      "0123456789",
+      ST7796_GREEN,
+      2);
+
+  ST7796_DrawText(
+      10,
+      60,
+      ".,:;-_/\\()[]<>=!?",
+      ST7796_GREEN,
+      2);
 
 
   /* USER CODE END 2 */

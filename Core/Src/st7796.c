@@ -522,24 +522,42 @@ void ST7796_DrawText(
     uint8_t scale)
 {
     uint16_t cursorX = x;
+    uint16_t cursorY = y;
 
     while (*text != '\0')
     {
+        if (*text == '\n')
+        {
+            cursorX = x;
+            cursorY += 8 * scale;
+
+            text++;
+            continue;
+        }
+
+        if (cursorX + (5 * scale) >320)
+        {
+        	cursorX = x;
+        	cursorY += 8 * scale;
+        }
+
         ST7796_DrawChar(
             cursorX,
-            y,
+            cursorY,
             *text,
             color,
             scale);
 
         /*
          * Each glyph is five blocks wide.
-         * The sixth block provides one space between characters.
+         * The sixth block provides one space
+         * between characters.
          */
         cursorX += 6 * scale;
 
         text++;
     }
+
 }
 
 
