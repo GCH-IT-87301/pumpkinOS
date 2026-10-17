@@ -1,4 +1,8 @@
-../Core/Src/pumpkin_os.c:12:6:DisplayText	16	static
-../Core/Src/pumpkin_os.c:18:6:PromptText	8	static
-../Core/Src/pumpkin_os.c:23:6:Separator	8	static
-../Core/Src/pumpkin_os.c:28:6:PumpkinOS_Start	8	static
+../Core/Src/pumpkin_os.c:19:6:DisplayText	16	static
+../Core/Src/pumpkin_os.c:25:6:PromptText	8	static
+../Core/Src/pumpkin_os.c:30:6:Separator	8	static
+../Core/Src/pumpkin_os.c:35:6:PumpkinOS_Start	8	static
+../Core/Src/pumpkin_os.c:40:6:ShowBootScreen	8	static
+../Core/Src/pumpkin_os.c:104:6:ShowGhostScreen	8	static
+../Core/Src/pumpkin_os.c:137:6:ShowPrinterScreen	8	static
+../Core/Src/pumpkin_os.c:146:6:ShowTicketScreen	8	static

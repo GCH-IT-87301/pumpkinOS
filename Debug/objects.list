@@ -1,3 +1,4 @@
+"./Core/Src/ascii_art.o"
 "./Core/Src/main.o"
 "./Core/Src/pumpkin_console.o"
 "./Core/Src/pumpkin_os.o"

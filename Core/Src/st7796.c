@@ -413,6 +413,60 @@ static const uint8_t *ST7796_GetGlyph(char character)
 	    0x0E,0x11,0x01,0x02,0x04,0x00,0x04
 	};
 
+	static const uint8_t glyph_at[7] =
+	{
+	    0x0E,
+	    0x11,
+	    0x17,
+	    0x15,
+	    0x17,
+	    0x10,
+	    0x0E
+	};
+
+	static const uint8_t glyph_hash[7] =
+	{
+	    0x0A,
+	    0x0A,
+	    0x1F,
+	    0x0A,
+	    0x1F,
+	    0x0A,
+	    0x0A
+	};
+
+	static const uint8_t glyph_tilde[7] =
+	{
+	    0x00,
+	    0x00,
+	    0x0D,
+	    0x12,
+	    0x00,
+	    0x00,
+	    0x00
+	};
+
+	static const uint8_t glyph_asterisk[7] =
+	{
+	    0x00,
+	    0x15,
+	    0x0E,
+	    0x1F,
+	    0x0E,
+	    0x15,
+	    0x00
+	};
+
+	static const uint8_t glyph_pipe[7] =
+	{
+	    0x04,
+	    0x04,
+	    0x04,
+	    0x04,
+	    0x04,
+	    0x04,
+	    0x04
+	};
 
 //lower case letters
 	static const uint8_t glyph_a[7] = {0x00,0x00,0x0E,0x01,0x0F,0x11,0x0F};
@@ -508,6 +562,11 @@ static const uint8_t *ST7796_GetGlyph(char character)
 	    case '=': return glyph_equals;
 	    case '!': return glyph_exclamation;
 	    case '?': return glyph_question;
+	    case '@': return glyph_at;
+	    case '#': return glyph_hash;
+	    case '~': return glyph_tilde;
+	    case '*': return glyph_asterisk;
+	    case '|': return glyph_pipe;
 
 	    //lower case letters
 	    case 'a': return glyph_a;

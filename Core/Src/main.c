@@ -174,6 +174,7 @@ int main(void)
 
   /* Screen test the bitmap fonts */
 
+  /*
   ST7796_DrawText(
       5,
       10,
@@ -240,20 +241,15 @@ int main(void)
       "Ready>\n",
       ST7796_GREEN,
       1);
+  	  */
 
   HAL_Delay(3000);
 
   /* start pumpkinOS */
 
-	  PumpkinConsole_Clear();
+  PumpkinOS_Start();
 
-	  DisplayText("PumpkinOS 6.66");
-	  DisplayText("");
-	  DisplayText("[ OK ] Candy Filesystem");
-	  DisplayText("[ OK ] Ghost Service");
-	  DisplayText("[FAIL] Printer Service");
-
-	  PromptText();
+  HAL_Delay(3000);
 
 
   /* USER CODE END 2 */

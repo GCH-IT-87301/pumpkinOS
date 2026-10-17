@@ -9,6 +9,7 @@
 #define PUMPKIN_OS_H
 
 void PumpkinOS_Start(void);
+void ShowBootScreen(void);
 
 void DisplayText(const char *text);
 void PromptText(void);

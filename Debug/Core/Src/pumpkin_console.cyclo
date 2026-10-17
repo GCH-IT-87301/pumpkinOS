@@ -1,3 +1,4 @@
 ../Core/Src/pumpkin_console.c:14:6:PumpkinConsole_Clear	1
 ../Core/Src/pumpkin_console.c:22:6:PumpkinConsole_Print	4
-../Core/Src/pumpkin_console.c:55:6:PumpkinConsole_Prompt	1
+../Core/Src/pumpkin_console.c:54:6:PumpkinConsole_Print_Large	4
+../Core/Src/pumpkin_console.c:87:6:PumpkinConsole_Prompt	1
