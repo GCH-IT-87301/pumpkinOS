@@ -17,5 +17,6 @@ void ST7796_FillRectangle(
 #define ST7796_BLUE   0x001F
 #define ST7796_BLACK  0x0000
 #define ST7796_WHITE  0xFFFF
+#define ST7796_ORANGE 0xFD20
 
 #endif

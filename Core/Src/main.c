@@ -95,14 +95,72 @@ int main(void)
 
   ST7796_Init();
  // ST7796_FillScreen(ST7796_GREEN);
+
   ST7796_FillScreen(ST7796_BLACK);
 
+  /* Pumpkin body */
   ST7796_FillRectangle(
       60,
-      100,
+      80,
       200,
-      120,
-      ST7796_RED);
+      220,
+      ST7796_ORANGE);
+
+  /* Stem */
+  ST7796_FillRectangle(
+      140,
+      40,
+      40,
+      50,
+      ST7796_GREEN);
+
+  /* Left eye */
+  ST7796_FillRectangle(
+      95,
+      130,
+      30,
+      30,
+      ST7796_BLACK);
+
+  /* Right eye */
+  ST7796_FillRectangle(
+      195,
+      130,
+      30,
+      30,
+      ST7796_BLACK);
+
+  /* Nose */
+  ST7796_FillRectangle(
+      145,
+      180,
+      30,
+      30,
+      ST7796_BLACK);
+
+  /* Mouth left */
+  ST7796_FillRectangle(
+      95,
+      240,
+      50,
+      20,
+      ST7796_BLACK);
+
+  /* Mouth center */
+  ST7796_FillRectangle(
+      145,
+      260,
+      30,
+      20,
+      ST7796_BLACK);
+
+  /* Mouth right */
+  ST7796_FillRectangle(
+      175,
+      240,
+      50,
+      20,
+      ST7796_BLACK);
 
   /* USER CODE END 2 */
 
