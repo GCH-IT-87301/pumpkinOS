@@ -94,7 +94,15 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   ST7796_Init();
-  ST7796_FillScreen(ST7796_GREEN);
+ // ST7796_FillScreen(ST7796_GREEN);
+  ST7796_FillScreen(ST7796_BLACK);
+
+  ST7796_FillRectangle(
+      60,
+      100,
+      200,
+      120,
+      ST7796_RED);
 
   /* USER CODE END 2 */
 

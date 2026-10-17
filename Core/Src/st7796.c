@@ -210,3 +210,60 @@ void ST7796_FillScreen(uint16_t color)
         LCD_CS_Pin,
         GPIO_PIN_SET);
 }
+
+void ST7796_FillRectangle(
+    uint16_t x,
+    uint16_t y,
+    uint16_t width,
+    uint16_t height,
+    uint16_t color)
+{
+    uint32_t pixels = width * height;
+
+    uint8_t high = color >> 8;
+    uint8_t low  = color & 0xFF;
+
+    LCD_WriteCommand(0x2A);
+
+    LCD_WriteData(x >> 8);
+    LCD_WriteData(x & 0xFF);
+
+    LCD_WriteData((x + width - 1) >> 8);
+    LCD_WriteData((x + width - 1) & 0xFF);
+
+    LCD_WriteCommand(0x2B);
+
+    LCD_WriteData(y >> 8);
+    LCD_WriteData(y & 0xFF);
+
+    LCD_WriteData((y + height - 1) >> 8);
+    LCD_WriteData((y + height - 1) & 0xFF);
+
+    LCD_WriteCommand(0x2C);
+
+    HAL_GPIO_WritePin(
+        LCD_CS_GPIO_Port,
+        LCD_CS_Pin,
+        GPIO_PIN_RESET);
+
+    HAL_GPIO_WritePin(
+        LCD_RS_GPIO_Port,
+        LCD_RS_Pin,
+        GPIO_PIN_SET);
+
+    for(uint32_t i = 0; i < pixels; i++)
+    {
+        uint8_t pixel[2] = {high, low};
+
+        HAL_SPI_Transmit(
+            &hspi1,
+            pixel,
+            2,
+            100);
+    }
+
+    HAL_GPIO_WritePin(
+        LCD_CS_GPIO_Port,
+        LCD_CS_Pin,
+        GPIO_PIN_SET);
+}

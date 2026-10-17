@@ -5,6 +5,12 @@
 
 void ST7796_Init(void);
 void ST7796_FillScreen(uint16_t color);
+void ST7796_FillRectangle(
+    uint16_t x,
+    uint16_t y,
+    uint16_t width,
+    uint16_t height,
+    uint16_t color);
 
 #define ST7796_RED    0xF800
 #define ST7796_GREEN  0x07E0
