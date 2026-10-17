@@ -2,7 +2,7 @@
 ../Core/Src/st7796.c:133:6:ST7796_FillScreen	4
 ../Core/Src/st7796.c:214:6:ST7796_FillRectangle	2
 ../Core/Src/st7796.c:271:6:DrawLetterH	1
-../Core/Src/st7796.c:278:23:ST7796_GetGlyph	12
-../Core/Src/st7796.c:425:6:ST7796_DrawChar	4
-../Core/Src/st7796.c:456:6:ST7796_DrawText	2
-../Core/Src/st7796.c:485:6:ST7796_DrawHelloPumpkin	1
+../Core/Src/st7796.c:278:23:ST7796_GetGlyph	55
+../Core/Src/st7796.c:486:6:ST7796_DrawChar	4
+../Core/Src/st7796.c:517:6:ST7796_DrawText	2
+../Core/Src/st7796.c:546:6:ST7796_DrawHelloPumpkin	1

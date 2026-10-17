@@ -164,6 +164,18 @@ int main(void)
 
   ST7796_DrawHelloPumpkin();
 
+  HAL_Delay(5000);
+
+  ST7796_FillScreen(ST7796_BLACK);
+
+  ST7796_DrawChar(
+      100,
+      100,
+      'A',
+      ST7796_WHITE,
+	  1);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -181,6 +193,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+
   }
   /* USER CODE END 3 */
 }

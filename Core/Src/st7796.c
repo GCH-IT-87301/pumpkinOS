@@ -280,145 +280,206 @@ static const uint8_t *ST7796_GetGlyph(char character)
     /*
      * Each character is 5 pixels wide by 7 pixels tall.
      * Each byte represents one horizontal row.
-     * Only the letters needed for HELLO PUMPKIN are included.
      */
 
-    static const uint8_t glyph_H[7] =
-    {
-        0x11,
-        0x11,
-        0x11,
-        0x1F,
-        0x11,
-        0x11,
-        0x11
-    };
+	//letters
+	static const uint8_t glyph_A[7] = {0x0E,0x11,0x11,0x1F,0x11,0x11,0x11};
+	static const uint8_t glyph_B[7] = {0x1E,0x11,0x11,0x1E,0x11,0x11,0x1E};
+	static const uint8_t glyph_C[7] = {0x0E,0x11,0x10,0x10,0x10,0x11,0x0E};
+	static const uint8_t glyph_D[7] = {0x1E,0x11,0x11,0x11,0x11,0x11,0x1E};
+	static const uint8_t glyph_E[7] = {0x1F,0x10,0x10,0x1E,0x10,0x10,0x1F};
+	static const uint8_t glyph_F[7] = {0x1F,0x10,0x10,0x1E,0x10,0x10,0x10};
+	static const uint8_t glyph_G[7] = {0x0E,0x11,0x10,0x17,0x11,0x11,0x0E};
+	static const uint8_t glyph_H[7] = {0x11,0x11,0x11,0x1F,0x11,0x11,0x11};
+	static const uint8_t glyph_I[7] = {0x1F,0x04,0x04,0x04,0x04,0x04,0x1F};
+	static const uint8_t glyph_J[7] = {0x01,0x01,0x01,0x01,0x11,0x11,0x0E};
+	static const uint8_t glyph_K[7] = {0x11,0x12,0x14,0x18,0x14,0x12,0x11};
+	static const uint8_t glyph_L[7] = {0x10,0x10,0x10,0x10,0x10,0x10,0x1F};
+	static const uint8_t glyph_M[7] = {0x11,0x1B,0x15,0x15,0x11,0x11,0x11};
+	static const uint8_t glyph_N[7] = {0x11,0x19,0x15,0x13,0x11,0x11,0x11};
+	static const uint8_t glyph_O[7] = {0x0E,0x11,0x11,0x11,0x11,0x11,0x0E};
+	static const uint8_t glyph_P[7] = {0x1E,0x11,0x11,0x1E,0x10,0x10,0x10};
+	static const uint8_t glyph_Q[7] = {0x0E,0x11,0x11,0x11,0x15,0x12,0x0D};
+	static const uint8_t glyph_R[7] = {0x1E,0x11,0x11,0x1E,0x14,0x12,0x11};
+	static const uint8_t glyph_S[7] = {0x0F,0x10,0x10,0x0E,0x01,0x01,0x1E};
+	static const uint8_t glyph_T[7] = {0x1F,0x04,0x04,0x04,0x04,0x04,0x04};
+	static const uint8_t glyph_U[7] = {0x11,0x11,0x11,0x11,0x11,0x11,0x0E};
+	static const uint8_t glyph_V[7] = {0x11,0x11,0x11,0x11,0x11,0x0A,0x04};
+	static const uint8_t glyph_W[7] = {0x11,0x11,0x11,0x15,0x15,0x15,0x0A};
+	static const uint8_t glyph_X[7] = {0x11,0x11,0x0A,0x04,0x0A,0x11,0x11};
+	static const uint8_t glyph_Y[7] = {0x11,0x11,0x0A,0x04,0x04,0x04,0x04};
+	static const uint8_t glyph_Z[7] = {0x1F,0x01,0x02,0x04,0x08,0x10,0x1F};
 
-    static const uint8_t glyph_E[7] =
-    {
-        0x1F,
-        0x10,
-        0x10,
-        0x1E,
-        0x10,
-        0x10,
-        0x1F
-    };
+	//numbers
+	static const uint8_t glyph_0[7] = {0x0E,0x11,0x13,0x15,0x19,0x11,0x0E};
+	static const uint8_t glyph_1[7] = {0x04,0x0C,0x04,0x04,0x04,0x04,0x0E};
+	static const uint8_t glyph_2[7] = {0x0E,0x11,0x01,0x02,0x04,0x08,0x1F};
+	static const uint8_t glyph_3[7] = {0x1F,0x02,0x04,0x02,0x01,0x11,0x0E};
+	static const uint8_t glyph_4[7] = {0x02,0x06,0x0A,0x12,0x1F,0x02,0x02};
+	static const uint8_t glyph_5[7] = {0x1F,0x10,0x1E,0x01,0x01,0x11,0x0E};
+	static const uint8_t glyph_6[7] = {0x06,0x08,0x10,0x1E,0x11,0x11,0x0E};
+	static const uint8_t glyph_7[7] = {0x1F,0x01,0x02,0x04,0x08,0x08,0x08};
+	static const uint8_t glyph_8[7] = {0x0E,0x11,0x11,0x0E,0x11,0x11,0x0E};
+	static const uint8_t glyph_9[7] = {0x0E,0x11,0x11,0x0F,0x01,0x02,0x0C};
 
-    static const uint8_t glyph_L[7] =
-    {
-        0x10,
-        0x10,
-        0x10,
-        0x10,
-        0x10,
-        0x10,
-        0x1F
-    };
+	//symbols
+	static const uint8_t glyph_space[7] =
+	{
+	    0x00,0x00,0x00,0x00,0x00,0x00,0x00
+	};
 
-    static const uint8_t glyph_O[7] =
-    {
-        0x0E,
-        0x11,
-        0x11,
-        0x11,
-        0x11,
-        0x11,
-        0x0E
-    };
+	static const uint8_t glyph_period[7] =
+	{
+	    0x00,0x00,0x00,0x00,0x00,0x0C,0x0C
+	};
 
-    static const uint8_t glyph_P[7] =
-    {
-        0x1E,
-        0x11,
-        0x11,
-        0x1E,
-        0x10,
-        0x10,
-        0x10
-    };
+	static const uint8_t glyph_comma[7] =
+	{
+	    0x00,0x00,0x00,0x00,0x0C,0x0C,0x08
+	};
 
-    static const uint8_t glyph_U[7] =
-    {
-        0x11,
-        0x11,
-        0x11,
-        0x11,
-        0x11,
-        0x11,
-        0x0E
-    };
+	static const uint8_t glyph_colon[7] =
+	{
+	    0x00,0x0C,0x0C,0x00,0x0C,0x0C,0x00
+	};
 
-    static const uint8_t glyph_M[7] =
-    {
-        0x11,
-        0x1B,
-        0x15,
-        0x15,
-        0x11,
-        0x11,
-        0x11
-    };
+	static const uint8_t glyph_semicolon[7] =
+	{
+	    0x00,0x0C,0x0C,0x00,0x0C,0x0C,0x08
+	};
 
-    static const uint8_t glyph_K[7] =
-    {
-        0x11,
-        0x12,
-        0x14,
-        0x18,
-        0x14,
-        0x12,
-        0x11
-    };
+	static const uint8_t glyph_dash[7] =
+	{
+	    0x00,0x00,0x00,0x1F,0x00,0x00,0x00
+	};
 
-    static const uint8_t glyph_I[7] =
-    {
-        0x1F,
-        0x04,
-        0x04,
-        0x04,
-        0x04,
-        0x04,
-        0x1F
-    };
+	static const uint8_t glyph_underscore[7] =
+	{
+	    0x00,0x00,0x00,0x00,0x00,0x00,0x1F
+	};
 
-    static const uint8_t glyph_N[7] =
-    {
-        0x11,
-        0x19,
-        0x19,
-        0x15,
-        0x13,
-        0x13,
-        0x11
-    };
+	static const uint8_t glyph_slash[7] =
+	{
+	    0x01,0x02,0x04,0x08,0x10,0x00,0x00
+	};
 
-    static const uint8_t glyph_blank[7] =
-    {
-        0x00,
-        0x00,
-        0x00,
-        0x00,
-        0x00,
-        0x00,
-        0x00
-    };
+	static const uint8_t glyph_backslash[7] =
+	{
+	    0x10,0x08,0x04,0x02,0x01,0x00,0x00
+	};
 
-    switch (character)
-    {
-        case 'H': return glyph_H;
-        case 'E': return glyph_E;
-        case 'L': return glyph_L;
-        case 'O': return glyph_O;
-        case 'P': return glyph_P;
-        case 'U': return glyph_U;
-        case 'M': return glyph_M;
-        case 'K': return glyph_K;
-        case 'I': return glyph_I;
-        case 'N': return glyph_N;
-        case ' ': return glyph_blank;
-        default:  return glyph_blank;
-    }
+	static const uint8_t glyph_lparen[7] =
+	{
+	    0x02,0x04,0x08,0x08,0x08,0x04,0x02
+	};
+
+	static const uint8_t glyph_rparen[7] =
+	{
+	    0x08,0x04,0x02,0x02,0x02,0x04,0x08
+	};
+
+	static const uint8_t glyph_lbracket[7] =
+	{
+	    0x0E,0x08,0x08,0x08,0x08,0x08,0x0E
+	};
+
+	static const uint8_t glyph_rbracket[7] =
+	{
+	    0x0E,0x02,0x02,0x02,0x02,0x02,0x0E
+	};
+
+	static const uint8_t glyph_greater[7] =
+	{
+	    0x10,0x08,0x04,0x02,0x04,0x08,0x10
+	};
+
+	static const uint8_t glyph_less[7] =
+	{
+	    0x01,0x02,0x04,0x08,0x04,0x02,0x01
+	};
+
+	static const uint8_t glyph_equals[7] =
+	{
+	    0x00,0x1F,0x00,0x1F,0x00,0x00,0x00
+	};
+
+	static const uint8_t glyph_exclamation[7] =
+	{
+	    0x04,0x04,0x04,0x04,0x04,0x00,0x04
+	};
+
+	static const uint8_t glyph_question[7] =
+	{
+	    0x0E,0x11,0x01,0x02,0x04,0x00,0x04
+	};
+	switch(character)
+	{
+	    /* Letters */
+
+	    case 'A': return glyph_A;
+	    case 'B': return glyph_B;
+	    case 'C': return glyph_C;
+	    case 'D': return glyph_D;
+	    case 'E': return glyph_E;
+	    case 'F': return glyph_F;
+	    case 'G': return glyph_G;
+	    case 'H': return glyph_H;
+	    case 'I': return glyph_I;
+	    case 'J': return glyph_J;
+	    case 'K': return glyph_K;
+	    case 'L': return glyph_L;
+	    case 'M': return glyph_M;
+	    case 'N': return glyph_N;
+	    case 'O': return glyph_O;
+	    case 'P': return glyph_P;
+	    case 'Q': return glyph_Q;
+	    case 'R': return glyph_R;
+	    case 'S': return glyph_S;
+	    case 'T': return glyph_T;
+	    case 'U': return glyph_U;
+	    case 'V': return glyph_V;
+	    case 'W': return glyph_W;
+	    case 'X': return glyph_X;
+	    case 'Y': return glyph_Y;
+	    case 'Z': return glyph_Z;
+
+	    /* Numbers */
+
+	    case '0': return glyph_0;
+	    case '1': return glyph_1;
+	    case '2': return glyph_2;
+	    case '3': return glyph_3;
+	    case '4': return glyph_4;
+	    case '5': return glyph_5;
+	    case '6': return glyph_6;
+	    case '7': return glyph_7;
+	    case '8': return glyph_8;
+	    case '9': return glyph_9;
+
+	    /* Symbols */
+
+	    case ' ': return glyph_space;
+	    case '.': return glyph_period;
+	    case ',': return glyph_comma;
+	    case ':': return glyph_colon;
+	    case ';': return glyph_semicolon;
+	    case '-': return glyph_dash;
+	    case '_': return glyph_underscore;
+	    case '/': return glyph_slash;
+	    case '\\': return glyph_backslash;
+	    case '(': return glyph_lparen;
+	    case ')': return glyph_rparen;
+	    case '[': return glyph_lbracket;
+	    case ']': return glyph_rbracket;
+	    case '>': return glyph_greater;
+	    case '<': return glyph_less;
+	    case '=': return glyph_equals;
+	    case '!': return glyph_exclamation;
+	    case '?': return glyph_question;
+
+	    default:
+	        return glyph_space;
+	}
 }
 
 
@@ -497,16 +558,16 @@ void ST7796_DrawHelloPumpkin(void)
      */
 
     ST7796_DrawText(
-        100,
+        76,
         325,
-        "HELLO",
+        "PUMPKIN",
         ST7796_WHITE,
         4);
 
     ST7796_DrawText(
-        76,
+        112,
         370,
-        "PUMPKIN",
+        "BIOS",
         ST7796_WHITE,
         4);
 }
