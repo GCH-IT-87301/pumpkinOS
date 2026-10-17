@@ -1,0 +1,3 @@
+../Core/Src/pumpkin_console.c:14:6:PumpkinConsole_Clear	8	static
+../Core/Src/pumpkin_console.c:22:6:PumpkinConsole_Print	24	static
+../Core/Src/pumpkin_console.c:55:6:PumpkinConsole_Prompt	8	static

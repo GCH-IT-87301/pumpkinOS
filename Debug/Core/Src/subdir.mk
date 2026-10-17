@@ -6,6 +6,8 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/main.c \
+../Core/Src/pumpkin_console.c \
+../Core/Src/pumpkin_os.c \
 ../Core/Src/spi_test.c \
 ../Core/Src/st7796.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
@@ -16,6 +18,8 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/main.o \
+./Core/Src/pumpkin_console.o \
+./Core/Src/pumpkin_os.o \
 ./Core/Src/spi_test.o \
 ./Core/Src/st7796.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
@@ -26,6 +30,8 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/main.d \
+./Core/Src/pumpkin_console.d \
+./Core/Src/pumpkin_os.d \
 ./Core/Src/spi_test.d \
 ./Core/Src/st7796.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
@@ -42,7 +48,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/spi_test.cyclo ./Core/Src/spi_test.d ./Core/Src/spi_test.o ./Core/Src/spi_test.su ./Core/Src/st7796.cyclo ./Core/Src/st7796.d ./Core/Src/st7796.o ./Core/Src/st7796.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su
+	-$(RM) ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/pumpkin_console.cyclo ./Core/Src/pumpkin_console.d ./Core/Src/pumpkin_console.o ./Core/Src/pumpkin_console.su ./Core/Src/pumpkin_os.cyclo ./Core/Src/pumpkin_os.d ./Core/Src/pumpkin_os.o ./Core/Src/pumpkin_os.su ./Core/Src/spi_test.cyclo ./Core/Src/spi_test.d ./Core/Src/spi_test.o ./Core/Src/spi_test.su ./Core/Src/st7796.cyclo ./Core/Src/st7796.d ./Core/Src/st7796.o ./Core/Src/st7796.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su
 
 .PHONY: clean-Core-2f-Src
 

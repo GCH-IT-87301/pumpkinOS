@@ -1,4 +1,6 @@
 "./Core/Src/main.o"
+"./Core/Src/pumpkin_console.o"
+"./Core/Src/pumpkin_os.o"
 "./Core/Src/spi_test.o"
 "./Core/Src/st7796.o"
 "./Core/Src/stm32f1xx_hal_msp.o"
