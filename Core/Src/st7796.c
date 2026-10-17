@@ -267,3 +267,246 @@ void ST7796_FillRectangle(
         LCD_CS_Pin,
         GPIO_PIN_SET);
 }
+
+void DrawLetterH(uint16_t x, uint16_t y, uint16_t color)
+{
+    ST7796_FillRectangle(x,     y, 8, 40, color);
+    ST7796_FillRectangle(x+24,  y, 8, 40, color);
+    ST7796_FillRectangle(x, y+16, 32, 8, color);
+}
+
+static const uint8_t *ST7796_GetGlyph(char character)
+{
+    /*
+     * Each character is 5 pixels wide by 7 pixels tall.
+     * Each byte represents one horizontal row.
+     * Only the letters needed for HELLO PUMPKIN are included.
+     */
+
+    static const uint8_t glyph_H[7] =
+    {
+        0x11,
+        0x11,
+        0x11,
+        0x1F,
+        0x11,
+        0x11,
+        0x11
+    };
+
+    static const uint8_t glyph_E[7] =
+    {
+        0x1F,
+        0x10,
+        0x10,
+        0x1E,
+        0x10,
+        0x10,
+        0x1F
+    };
+
+    static const uint8_t glyph_L[7] =
+    {
+        0x10,
+        0x10,
+        0x10,
+        0x10,
+        0x10,
+        0x10,
+        0x1F
+    };
+
+    static const uint8_t glyph_O[7] =
+    {
+        0x0E,
+        0x11,
+        0x11,
+        0x11,
+        0x11,
+        0x11,
+        0x0E
+    };
+
+    static const uint8_t glyph_P[7] =
+    {
+        0x1E,
+        0x11,
+        0x11,
+        0x1E,
+        0x10,
+        0x10,
+        0x10
+    };
+
+    static const uint8_t glyph_U[7] =
+    {
+        0x11,
+        0x11,
+        0x11,
+        0x11,
+        0x11,
+        0x11,
+        0x0E
+    };
+
+    static const uint8_t glyph_M[7] =
+    {
+        0x11,
+        0x1B,
+        0x15,
+        0x15,
+        0x11,
+        0x11,
+        0x11
+    };
+
+    static const uint8_t glyph_K[7] =
+    {
+        0x11,
+        0x12,
+        0x14,
+        0x18,
+        0x14,
+        0x12,
+        0x11
+    };
+
+    static const uint8_t glyph_I[7] =
+    {
+        0x1F,
+        0x04,
+        0x04,
+        0x04,
+        0x04,
+        0x04,
+        0x1F
+    };
+
+    static const uint8_t glyph_N[7] =
+    {
+        0x11,
+        0x19,
+        0x19,
+        0x15,
+        0x13,
+        0x13,
+        0x11
+    };
+
+    static const uint8_t glyph_blank[7] =
+    {
+        0x00,
+        0x00,
+        0x00,
+        0x00,
+        0x00,
+        0x00,
+        0x00
+    };
+
+    switch (character)
+    {
+        case 'H': return glyph_H;
+        case 'E': return glyph_E;
+        case 'L': return glyph_L;
+        case 'O': return glyph_O;
+        case 'P': return glyph_P;
+        case 'U': return glyph_U;
+        case 'M': return glyph_M;
+        case 'K': return glyph_K;
+        case 'I': return glyph_I;
+        case 'N': return glyph_N;
+        case ' ': return glyph_blank;
+        default:  return glyph_blank;
+    }
+}
+
+
+void ST7796_DrawChar(
+    uint16_t x,
+    uint16_t y,
+    char character,
+    uint16_t color,
+    uint8_t scale)
+{
+    const uint8_t *glyph = ST7796_GetGlyph(character);
+
+    for (uint8_t row = 0; row < 7; row++)
+    {
+        for (uint8_t column = 0; column < 5; column++)
+        {
+            /*
+             * Bit 4 is the leftmost pixel.
+             * Bit 0 is the rightmost pixel.
+             */
+            if (glyph[row] & (1U << (4 - column)))
+            {
+                ST7796_FillRectangle(
+                    x + (column * scale),
+                    y + (row * scale),
+                    scale,
+                    scale,
+                    color);
+            }
+        }
+    }
+}
+
+
+void ST7796_DrawText(
+    uint16_t x,
+    uint16_t y,
+    const char *text,
+    uint16_t color,
+    uint8_t scale)
+{
+    uint16_t cursorX = x;
+
+    while (*text != '\0')
+    {
+        ST7796_DrawChar(
+            cursorX,
+            y,
+            *text,
+            color,
+            scale);
+
+        /*
+         * Each glyph is five blocks wide.
+         * The sixth block provides one space between characters.
+         */
+        cursorX += 6 * scale;
+
+        text++;
+    }
+}
+
+
+void ST7796_DrawHelloPumpkin(void)
+{
+    /*
+     * Scale 4 produces characters:
+     *
+     * Width:  5 × 4 = 20 pixels
+     * Height: 7 × 4 = 28 pixels
+     *
+     * HELLO occupies 120 pixels including spacing.
+     * PUMPKIN occupies 168 pixels including spacing.
+     *
+     * These X coordinates center both lines on a 320-pixel display.
+     */
+
+    ST7796_DrawText(
+        100,
+        325,
+        "HELLO",
+        ST7796_WHITE,
+        4);
+
+    ST7796_DrawText(
+        76,
+        370,
+        "PUMPKIN",
+        ST7796_WHITE,
+        4);
+}

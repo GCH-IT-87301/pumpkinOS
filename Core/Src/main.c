@@ -162,6 +162,8 @@ int main(void)
       20,
       ST7796_BLACK);
 
+  ST7796_DrawHelloPumpkin();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
