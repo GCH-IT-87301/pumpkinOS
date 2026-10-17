@@ -2309,7 +2309,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x08000000                g_pfnVectors
                 0x0800010c                        . = ALIGN (0x4)
 
-.text           0x0800010c     0x2338
+.text           0x0800010c     0x2320
                 0x0800010c                        . = ALIGN (0x4)
  *(.text)
  .text          0x0800010c       0x40 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
@@ -2351,486 +2351,486 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x08000e50       0xb0 ./Core/Src/st7796.o
                 0x08000e50                ST7796_DrawText
  .text.ST7796_DrawHelloPumpkin
-                0x08000f00       0x3c ./Core/Src/st7796.o
+                0x08000f00       0x24 ./Core/Src/st7796.o
                 0x08000f00                ST7796_DrawHelloPumpkin
  .text.HAL_MspInit
-                0x08000f3c       0x64 ./Core/Src/stm32f1xx_hal_msp.o
-                0x08000f3c                HAL_MspInit
+                0x08000f24       0x64 ./Core/Src/stm32f1xx_hal_msp.o
+                0x08000f24                HAL_MspInit
  .text.HAL_SPI_MspInit
-                0x08000fa0       0x94 ./Core/Src/stm32f1xx_hal_msp.o
-                0x08000fa0                HAL_SPI_MspInit
+                0x08000f88       0x94 ./Core/Src/stm32f1xx_hal_msp.o
+                0x08000f88                HAL_SPI_MspInit
  .text.NMI_Handler
-                0x08001034        0x8 ./Core/Src/stm32f1xx_it.o
-                0x08001034                NMI_Handler
+                0x0800101c        0x8 ./Core/Src/stm32f1xx_it.o
+                0x0800101c                NMI_Handler
  .text.HardFault_Handler
-                0x0800103c        0x8 ./Core/Src/stm32f1xx_it.o
-                0x0800103c                HardFault_Handler
+                0x08001024        0x8 ./Core/Src/stm32f1xx_it.o
+                0x08001024                HardFault_Handler
  .text.MemManage_Handler
-                0x08001044        0x8 ./Core/Src/stm32f1xx_it.o
-                0x08001044                MemManage_Handler
+                0x0800102c        0x8 ./Core/Src/stm32f1xx_it.o
+                0x0800102c                MemManage_Handler
  .text.BusFault_Handler
-                0x0800104c        0x8 ./Core/Src/stm32f1xx_it.o
-                0x0800104c                BusFault_Handler
+                0x08001034        0x8 ./Core/Src/stm32f1xx_it.o
+                0x08001034                BusFault_Handler
  .text.UsageFault_Handler
-                0x08001054        0x8 ./Core/Src/stm32f1xx_it.o
-                0x08001054                UsageFault_Handler
+                0x0800103c        0x8 ./Core/Src/stm32f1xx_it.o
+                0x0800103c                UsageFault_Handler
  .text.SVC_Handler
-                0x0800105c        0xc ./Core/Src/stm32f1xx_it.o
-                0x0800105c                SVC_Handler
+                0x08001044        0xc ./Core/Src/stm32f1xx_it.o
+                0x08001044                SVC_Handler
  .text.DebugMon_Handler
-                0x08001068        0xc ./Core/Src/stm32f1xx_it.o
-                0x08001068                DebugMon_Handler
+                0x08001050        0xc ./Core/Src/stm32f1xx_it.o
+                0x08001050                DebugMon_Handler
  .text.PendSV_Handler
-                0x08001074        0xc ./Core/Src/stm32f1xx_it.o
-                0x08001074                PendSV_Handler
+                0x0800105c        0xc ./Core/Src/stm32f1xx_it.o
+                0x0800105c                PendSV_Handler
  .text.SysTick_Handler
-                0x08001080        0xc ./Core/Src/stm32f1xx_it.o
-                0x08001080                SysTick_Handler
+                0x08001068        0xc ./Core/Src/stm32f1xx_it.o
+                0x08001068                SysTick_Handler
  .text.SystemInit
-                0x0800108c        0xc ./Core/Src/system_stm32f1xx.o
-                0x0800108c                SystemInit
+                0x08001074        0xc ./Core/Src/system_stm32f1xx.o
+                0x08001074                SystemInit
  .text.Reset_Handler
-                0x08001098       0x48 ./Core/Startup/startup_stm32f103c6tx.o
-                0x08001098                Reset_Handler
+                0x08001080       0x48 ./Core/Startup/startup_stm32f103c6tx.o
+                0x08001080                Reset_Handler
  .text.Default_Handler
-                0x080010e0        0x2 ./Core/Startup/startup_stm32f103c6tx.o
-                0x080010e0                USBWakeUp_IRQHandler
-                0x080010e0                EXTI2_IRQHandler
-                0x080010e0                TIM1_CC_IRQHandler
-                0x080010e0                PVD_IRQHandler
-                0x080010e0                EXTI3_IRQHandler
-                0x080010e0                EXTI0_IRQHandler
-                0x080010e0                ADC1_2_IRQHandler
-                0x080010e0                SPI1_IRQHandler
-                0x080010e0                TAMPER_IRQHandler
-                0x080010e0                DMA1_Channel4_IRQHandler
-                0x080010e0                RTC_IRQHandler
-                0x080010e0                DMA1_Channel7_IRQHandler
-                0x080010e0                CAN1_RX1_IRQHandler
-                0x080010e0                I2C1_EV_IRQHandler
-                0x080010e0                DMA1_Channel6_IRQHandler
-                0x080010e0                TIM3_IRQHandler
-                0x080010e0                RCC_IRQHandler
-                0x080010e0                TIM1_TRG_COM_IRQHandler
-                0x080010e0                DMA1_Channel1_IRQHandler
-                0x080010e0                Default_Handler
-                0x080010e0                EXTI15_10_IRQHandler
-                0x080010e0                EXTI9_5_IRQHandler
-                0x080010e0                DMA1_Channel5_IRQHandler
-                0x080010e0                EXTI4_IRQHandler
-                0x080010e0                USB_LP_CAN1_RX0_IRQHandler
-                0x080010e0                USB_HP_CAN1_TX_IRQHandler
-                0x080010e0                DMA1_Channel3_IRQHandler
-                0x080010e0                TIM1_UP_IRQHandler
-                0x080010e0                WWDG_IRQHandler
-                0x080010e0                TIM2_IRQHandler
-                0x080010e0                TIM1_BRK_IRQHandler
-                0x080010e0                EXTI1_IRQHandler
-                0x080010e0                USART2_IRQHandler
-                0x080010e0                DMA1_Channel2_IRQHandler
-                0x080010e0                CAN1_SCE_IRQHandler
-                0x080010e0                FLASH_IRQHandler
-                0x080010e0                USART1_IRQHandler
-                0x080010e0                I2C1_ER_IRQHandler
-                0x080010e0                RTC_Alarm_IRQHandler
- *fill*         0x080010e2        0x2 
+                0x080010c8        0x2 ./Core/Startup/startup_stm32f103c6tx.o
+                0x080010c8                USBWakeUp_IRQHandler
+                0x080010c8                EXTI2_IRQHandler
+                0x080010c8                TIM1_CC_IRQHandler
+                0x080010c8                PVD_IRQHandler
+                0x080010c8                EXTI3_IRQHandler
+                0x080010c8                EXTI0_IRQHandler
+                0x080010c8                ADC1_2_IRQHandler
+                0x080010c8                SPI1_IRQHandler
+                0x080010c8                TAMPER_IRQHandler
+                0x080010c8                DMA1_Channel4_IRQHandler
+                0x080010c8                RTC_IRQHandler
+                0x080010c8                DMA1_Channel7_IRQHandler
+                0x080010c8                CAN1_RX1_IRQHandler
+                0x080010c8                I2C1_EV_IRQHandler
+                0x080010c8                DMA1_Channel6_IRQHandler
+                0x080010c8                TIM3_IRQHandler
+                0x080010c8                RCC_IRQHandler
+                0x080010c8                TIM1_TRG_COM_IRQHandler
+                0x080010c8                DMA1_Channel1_IRQHandler
+                0x080010c8                Default_Handler
+                0x080010c8                EXTI15_10_IRQHandler
+                0x080010c8                EXTI9_5_IRQHandler
+                0x080010c8                DMA1_Channel5_IRQHandler
+                0x080010c8                EXTI4_IRQHandler
+                0x080010c8                USB_LP_CAN1_RX0_IRQHandler
+                0x080010c8                USB_HP_CAN1_TX_IRQHandler
+                0x080010c8                DMA1_Channel3_IRQHandler
+                0x080010c8                TIM1_UP_IRQHandler
+                0x080010c8                WWDG_IRQHandler
+                0x080010c8                TIM2_IRQHandler
+                0x080010c8                TIM1_BRK_IRQHandler
+                0x080010c8                EXTI1_IRQHandler
+                0x080010c8                USART2_IRQHandler
+                0x080010c8                DMA1_Channel2_IRQHandler
+                0x080010c8                CAN1_SCE_IRQHandler
+                0x080010c8                FLASH_IRQHandler
+                0x080010c8                USART1_IRQHandler
+                0x080010c8                I2C1_ER_IRQHandler
+                0x080010c8                RTC_Alarm_IRQHandler
+ *fill*         0x080010ca        0x2 
  .text.HAL_Init
-                0x080010e4       0x2c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
-                0x080010e4                HAL_Init
+                0x080010cc       0x2c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+                0x080010cc                HAL_Init
  .text.HAL_InitTick
-                0x08001110       0x60 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
-                0x08001110                HAL_InitTick
+                0x080010f8       0x60 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+                0x080010f8                HAL_InitTick
  .text.HAL_IncTick
-                0x08001170       0x24 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
-                0x08001170                HAL_IncTick
+                0x08001158       0x24 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+                0x08001158                HAL_IncTick
  .text.HAL_GetTick
-                0x08001194       0x14 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
-                0x08001194                HAL_GetTick
+                0x0800117c       0x14 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+                0x0800117c                HAL_GetTick
  .text.HAL_Delay
-                0x080011a8       0x48 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
-                0x080011a8                HAL_Delay
+                0x08001190       0x48 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+                0x08001190                HAL_Delay
  .text.__NVIC_SetPriorityGrouping
-                0x080011f0       0x48 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x080011d8       0x48 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .text.__NVIC_GetPriorityGrouping
-                0x08001238       0x1c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x08001220       0x1c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .text.__NVIC_SetPriority
-                0x08001254       0x54 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x0800123c       0x54 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .text.NVIC_EncodePriority
-                0x080012a8       0x64 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x08001290       0x64 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .text.SysTick_Config
-                0x0800130c       0x44 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x080012f4       0x44 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08001350       0x16 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
-                0x08001350                HAL_NVIC_SetPriorityGrouping
+                0x08001338       0x16 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x08001338                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08001366       0x38 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
-                0x08001366                HAL_NVIC_SetPriority
+                0x0800134e       0x38 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x0800134e                HAL_NVIC_SetPriority
  .text.HAL_SYSTICK_Config
-                0x0800139e       0x18 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
-                0x0800139e                HAL_SYSTICK_Config
- *fill*         0x080013b6        0x2 
+                0x08001386       0x18 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+                0x08001386                HAL_SYSTICK_Config
+ *fill*         0x0800139e        0x2 
  .text.HAL_GPIO_Init
-                0x080013b8      0x2f8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
-                0x080013b8                HAL_GPIO_Init
+                0x080013a0      0x2f8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+                0x080013a0                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x080016b0       0x30 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
-                0x080016b0                HAL_GPIO_WritePin
+                0x08001698       0x30 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+                0x08001698                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x080016e0       0x32 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
-                0x080016e0                HAL_GPIO_TogglePin
- *fill*         0x08001712        0x2 
+                0x080016c8       0x32 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+                0x080016c8                HAL_GPIO_TogglePin
+ *fill*         0x080016fa        0x2 
  .text.HAL_RCC_OscConfig
-                0x08001714      0x504 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
-                0x08001714                HAL_RCC_OscConfig
+                0x080016fc      0x504 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+                0x080016fc                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x08001c18      0x1d4 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
-                0x08001c18                HAL_RCC_ClockConfig
+                0x08001c00      0x1d4 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+                0x08001c00                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08001dec       0xa8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
-                0x08001dec                HAL_RCC_GetSysClockFreq
+                0x08001dd4       0xa8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+                0x08001dd4                HAL_RCC_GetSysClockFreq
  .text.RCC_Delay
-                0x08001e94       0x3c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+                0x08001e7c       0x3c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
  .text.HAL_SPI_Init
-                0x08001ed0      0x108 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
-                0x08001ed0                HAL_SPI_Init
+                0x08001eb8      0x108 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+                0x08001eb8                HAL_SPI_Init
  .text.HAL_SPI_Transmit
-                0x08001fd8      0x288 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
-                0x08001fd8                HAL_SPI_Transmit
+                0x08001fc0      0x288 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+                0x08001fc0                HAL_SPI_Transmit
  .text.SPI_WaitFlagStateUntilTimeout
-                0x08002260      0x110 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+                0x08002248      0x110 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
  .text.SPI_EndRxTxTransaction
-                0x08002370       0x62 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
- .text.memset   0x080023d2       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
-                0x080023d2                memset
- *fill*         0x080023e2        0x2 
+                0x08002358       0x62 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+ .text.memset   0x080023ba       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x080023ba                memset
+ *fill*         0x080023ca        0x2 
  .text.__libc_init_array
-                0x080023e4       0x48 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
-                0x080023e4                __libc_init_array
+                0x080023cc       0x48 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
+                0x080023cc                __libc_init_array
  *(.glue_7)
- .glue_7        0x0800242c        0x0 linker stubs
+ .glue_7        0x08002414        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800242c        0x0 linker stubs
+ .glue_7t       0x08002414        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800242c        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x08002414        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x0800242c        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
-                0x0800242c                _init
- .init          0x08002430        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
+ .init          0x08002414        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
+                0x08002414                _init
+ .init          0x08002418        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x08002438        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
-                0x08002438                _fini
- .fini          0x0800243c        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
-                0x08002444                        . = ALIGN (0x4)
-                0x08002444                        _etext = .
+ .fini          0x08002420        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
+                0x08002420                _fini
+ .fini          0x08002424        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
+                0x0800242c                        . = ALIGN (0x4)
+                0x0800242c                        _etext = .
 
-.vfp11_veneer   0x08002444        0x0
- .vfp11_veneer  0x08002444        0x0 linker stubs
+.vfp11_veneer   0x0800242c        0x0
+ .vfp11_veneer  0x0800242c        0x0 linker stubs
 
-.v4_bx          0x08002444        0x0
- .v4_bx         0x08002444        0x0 linker stubs
+.v4_bx          0x0800242c        0x0
+ .v4_bx         0x0800242c        0x0 linker stubs
 
-.iplt           0x08002444        0x0
- .iplt          0x08002444        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x0800242c        0x0
+ .iplt          0x0800242c        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x08002444      0x370
-                0x08002444                        . = ALIGN (0x4)
+.rodata         0x0800242c      0x370
+                0x0800242c                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08002444       0xbc ./Core/Src/main.o
- .rodata        0x08002500        0xd ./Core/Src/st7796.o
+ .rodata        0x0800242c       0xbc ./Core/Src/main.o
+ .rodata        0x080024e8        0xd ./Core/Src/st7796.o
  *(.rodata*)
- *fill*         0x0800250d        0x3 
+ *fill*         0x080024f5        0x3 
  .rodata.glyph_A.79
+                0x080024f8        0x7 ./Core/Src/st7796.o
+ *fill*         0x080024ff        0x1 
+ .rodata.glyph_B.78
+                0x08002500        0x7 ./Core/Src/st7796.o
+ *fill*         0x08002507        0x1 
+ .rodata.glyph_C.77
+                0x08002508        0x7 ./Core/Src/st7796.o
+ *fill*         0x0800250f        0x1 
+ .rodata.glyph_D.76
                 0x08002510        0x7 ./Core/Src/st7796.o
  *fill*         0x08002517        0x1 
- .rodata.glyph_B.78
+ .rodata.glyph_E.75
                 0x08002518        0x7 ./Core/Src/st7796.o
  *fill*         0x0800251f        0x1 
- .rodata.glyph_C.77
+ .rodata.glyph_F.74
                 0x08002520        0x7 ./Core/Src/st7796.o
  *fill*         0x08002527        0x1 
- .rodata.glyph_D.76
+ .rodata.glyph_G.73
                 0x08002528        0x7 ./Core/Src/st7796.o
  *fill*         0x0800252f        0x1 
- .rodata.glyph_E.75
+ .rodata.glyph_H.72
                 0x08002530        0x7 ./Core/Src/st7796.o
  *fill*         0x08002537        0x1 
- .rodata.glyph_F.74
+ .rodata.glyph_I.71
                 0x08002538        0x7 ./Core/Src/st7796.o
  *fill*         0x0800253f        0x1 
- .rodata.glyph_G.73
+ .rodata.glyph_J.70
                 0x08002540        0x7 ./Core/Src/st7796.o
  *fill*         0x08002547        0x1 
- .rodata.glyph_H.72
+ .rodata.glyph_K.69
                 0x08002548        0x7 ./Core/Src/st7796.o
  *fill*         0x0800254f        0x1 
- .rodata.glyph_I.71
+ .rodata.glyph_L.68
                 0x08002550        0x7 ./Core/Src/st7796.o
  *fill*         0x08002557        0x1 
- .rodata.glyph_J.70
+ .rodata.glyph_M.67
                 0x08002558        0x7 ./Core/Src/st7796.o
  *fill*         0x0800255f        0x1 
- .rodata.glyph_K.69
+ .rodata.glyph_N.66
                 0x08002560        0x7 ./Core/Src/st7796.o
  *fill*         0x08002567        0x1 
- .rodata.glyph_L.68
+ .rodata.glyph_O.65
                 0x08002568        0x7 ./Core/Src/st7796.o
  *fill*         0x0800256f        0x1 
- .rodata.glyph_M.67
+ .rodata.glyph_P.64
                 0x08002570        0x7 ./Core/Src/st7796.o
  *fill*         0x08002577        0x1 
- .rodata.glyph_N.66
+ .rodata.glyph_Q.63
                 0x08002578        0x7 ./Core/Src/st7796.o
  *fill*         0x0800257f        0x1 
- .rodata.glyph_O.65
+ .rodata.glyph_R.62
                 0x08002580        0x7 ./Core/Src/st7796.o
  *fill*         0x08002587        0x1 
- .rodata.glyph_P.64
+ .rodata.glyph_S.61
                 0x08002588        0x7 ./Core/Src/st7796.o
  *fill*         0x0800258f        0x1 
- .rodata.glyph_Q.63
+ .rodata.glyph_T.60
                 0x08002590        0x7 ./Core/Src/st7796.o
  *fill*         0x08002597        0x1 
- .rodata.glyph_R.62
+ .rodata.glyph_U.59
                 0x08002598        0x7 ./Core/Src/st7796.o
  *fill*         0x0800259f        0x1 
- .rodata.glyph_S.61
+ .rodata.glyph_V.58
                 0x080025a0        0x7 ./Core/Src/st7796.o
  *fill*         0x080025a7        0x1 
- .rodata.glyph_T.60
+ .rodata.glyph_W.57
                 0x080025a8        0x7 ./Core/Src/st7796.o
  *fill*         0x080025af        0x1 
- .rodata.glyph_U.59
+ .rodata.glyph_X.56
                 0x080025b0        0x7 ./Core/Src/st7796.o
  *fill*         0x080025b7        0x1 
- .rodata.glyph_V.58
+ .rodata.glyph_Y.55
                 0x080025b8        0x7 ./Core/Src/st7796.o
  *fill*         0x080025bf        0x1 
- .rodata.glyph_W.57
+ .rodata.glyph_Z.54
                 0x080025c0        0x7 ./Core/Src/st7796.o
  *fill*         0x080025c7        0x1 
- .rodata.glyph_X.56
+ .rodata.glyph_0.53
                 0x080025c8        0x7 ./Core/Src/st7796.o
  *fill*         0x080025cf        0x1 
- .rodata.glyph_Y.55
+ .rodata.glyph_1.52
                 0x080025d0        0x7 ./Core/Src/st7796.o
  *fill*         0x080025d7        0x1 
- .rodata.glyph_Z.54
+ .rodata.glyph_2.51
                 0x080025d8        0x7 ./Core/Src/st7796.o
  *fill*         0x080025df        0x1 
- .rodata.glyph_0.53
+ .rodata.glyph_3.50
                 0x080025e0        0x7 ./Core/Src/st7796.o
  *fill*         0x080025e7        0x1 
- .rodata.glyph_1.52
+ .rodata.glyph_4.49
                 0x080025e8        0x7 ./Core/Src/st7796.o
  *fill*         0x080025ef        0x1 
- .rodata.glyph_2.51
+ .rodata.glyph_5.48
                 0x080025f0        0x7 ./Core/Src/st7796.o
  *fill*         0x080025f7        0x1 
- .rodata.glyph_3.50
+ .rodata.glyph_6.47
                 0x080025f8        0x7 ./Core/Src/st7796.o
  *fill*         0x080025ff        0x1 
- .rodata.glyph_4.49
+ .rodata.glyph_7.46
                 0x08002600        0x7 ./Core/Src/st7796.o
  *fill*         0x08002607        0x1 
- .rodata.glyph_5.48
+ .rodata.glyph_8.45
                 0x08002608        0x7 ./Core/Src/st7796.o
  *fill*         0x0800260f        0x1 
- .rodata.glyph_6.47
+ .rodata.glyph_9.44
                 0x08002610        0x7 ./Core/Src/st7796.o
  *fill*         0x08002617        0x1 
- .rodata.glyph_7.46
+ .rodata.glyph_space.43
                 0x08002618        0x7 ./Core/Src/st7796.o
  *fill*         0x0800261f        0x1 
- .rodata.glyph_8.45
+ .rodata.glyph_period.42
                 0x08002620        0x7 ./Core/Src/st7796.o
  *fill*         0x08002627        0x1 
- .rodata.glyph_9.44
+ .rodata.glyph_comma.41
                 0x08002628        0x7 ./Core/Src/st7796.o
  *fill*         0x0800262f        0x1 
- .rodata.glyph_space.43
+ .rodata.glyph_colon.40
                 0x08002630        0x7 ./Core/Src/st7796.o
  *fill*         0x08002637        0x1 
- .rodata.glyph_period.42
+ .rodata.glyph_semicolon.39
                 0x08002638        0x7 ./Core/Src/st7796.o
  *fill*         0x0800263f        0x1 
- .rodata.glyph_comma.41
+ .rodata.glyph_dash.38
                 0x08002640        0x7 ./Core/Src/st7796.o
  *fill*         0x08002647        0x1 
- .rodata.glyph_colon.40
+ .rodata.glyph_underscore.37
                 0x08002648        0x7 ./Core/Src/st7796.o
  *fill*         0x0800264f        0x1 
- .rodata.glyph_semicolon.39
+ .rodata.glyph_slash.36
                 0x08002650        0x7 ./Core/Src/st7796.o
  *fill*         0x08002657        0x1 
- .rodata.glyph_dash.38
+ .rodata.glyph_backslash.35
                 0x08002658        0x7 ./Core/Src/st7796.o
  *fill*         0x0800265f        0x1 
- .rodata.glyph_underscore.37
+ .rodata.glyph_lparen.34
                 0x08002660        0x7 ./Core/Src/st7796.o
  *fill*         0x08002667        0x1 
- .rodata.glyph_slash.36
+ .rodata.glyph_rparen.33
                 0x08002668        0x7 ./Core/Src/st7796.o
  *fill*         0x0800266f        0x1 
- .rodata.glyph_backslash.35
+ .rodata.glyph_lbracket.32
                 0x08002670        0x7 ./Core/Src/st7796.o
  *fill*         0x08002677        0x1 
- .rodata.glyph_lparen.34
+ .rodata.glyph_rbracket.31
                 0x08002678        0x7 ./Core/Src/st7796.o
  *fill*         0x0800267f        0x1 
- .rodata.glyph_rparen.33
+ .rodata.glyph_greater.30
                 0x08002680        0x7 ./Core/Src/st7796.o
  *fill*         0x08002687        0x1 
- .rodata.glyph_lbracket.32
+ .rodata.glyph_less.29
                 0x08002688        0x7 ./Core/Src/st7796.o
  *fill*         0x0800268f        0x1 
- .rodata.glyph_rbracket.31
+ .rodata.glyph_equals.28
                 0x08002690        0x7 ./Core/Src/st7796.o
  *fill*         0x08002697        0x1 
- .rodata.glyph_greater.30
+ .rodata.glyph_exclamation.27
                 0x08002698        0x7 ./Core/Src/st7796.o
  *fill*         0x0800269f        0x1 
- .rodata.glyph_less.29
+ .rodata.glyph_question.26
                 0x080026a0        0x7 ./Core/Src/st7796.o
  *fill*         0x080026a7        0x1 
- .rodata.glyph_equals.28
+ .rodata.glyph_a.25
                 0x080026a8        0x7 ./Core/Src/st7796.o
  *fill*         0x080026af        0x1 
- .rodata.glyph_exclamation.27
+ .rodata.glyph_b.24
                 0x080026b0        0x7 ./Core/Src/st7796.o
  *fill*         0x080026b7        0x1 
- .rodata.glyph_question.26
+ .rodata.glyph_c.23
                 0x080026b8        0x7 ./Core/Src/st7796.o
  *fill*         0x080026bf        0x1 
- .rodata.glyph_a.25
+ .rodata.glyph_d.22
                 0x080026c0        0x7 ./Core/Src/st7796.o
  *fill*         0x080026c7        0x1 
- .rodata.glyph_b.24
+ .rodata.glyph_e.21
                 0x080026c8        0x7 ./Core/Src/st7796.o
  *fill*         0x080026cf        0x1 
- .rodata.glyph_c.23
+ .rodata.glyph_f.20
                 0x080026d0        0x7 ./Core/Src/st7796.o
  *fill*         0x080026d7        0x1 
- .rodata.glyph_d.22
+ .rodata.glyph_g.19
                 0x080026d8        0x7 ./Core/Src/st7796.o
  *fill*         0x080026df        0x1 
- .rodata.glyph_e.21
+ .rodata.glyph_h.18
                 0x080026e0        0x7 ./Core/Src/st7796.o
  *fill*         0x080026e7        0x1 
- .rodata.glyph_f.20
+ .rodata.glyph_i.17
                 0x080026e8        0x7 ./Core/Src/st7796.o
  *fill*         0x080026ef        0x1 
- .rodata.glyph_g.19
+ .rodata.glyph_j.16
                 0x080026f0        0x7 ./Core/Src/st7796.o
  *fill*         0x080026f7        0x1 
- .rodata.glyph_h.18
+ .rodata.glyph_k.15
                 0x080026f8        0x7 ./Core/Src/st7796.o
  *fill*         0x080026ff        0x1 
- .rodata.glyph_i.17
+ .rodata.glyph_l.14
                 0x08002700        0x7 ./Core/Src/st7796.o
  *fill*         0x08002707        0x1 
- .rodata.glyph_j.16
+ .rodata.glyph_m.13
                 0x08002708        0x7 ./Core/Src/st7796.o
  *fill*         0x0800270f        0x1 
- .rodata.glyph_k.15
+ .rodata.glyph_n.12
                 0x08002710        0x7 ./Core/Src/st7796.o
  *fill*         0x08002717        0x1 
- .rodata.glyph_l.14
+ .rodata.glyph_o.11
                 0x08002718        0x7 ./Core/Src/st7796.o
  *fill*         0x0800271f        0x1 
- .rodata.glyph_m.13
+ .rodata.glyph_p.10
                 0x08002720        0x7 ./Core/Src/st7796.o
  *fill*         0x08002727        0x1 
- .rodata.glyph_n.12
+ .rodata.glyph_q.9
                 0x08002728        0x7 ./Core/Src/st7796.o
  *fill*         0x0800272f        0x1 
- .rodata.glyph_o.11
+ .rodata.glyph_r.8
                 0x08002730        0x7 ./Core/Src/st7796.o
  *fill*         0x08002737        0x1 
- .rodata.glyph_p.10
+ .rodata.glyph_s.7
                 0x08002738        0x7 ./Core/Src/st7796.o
  *fill*         0x0800273f        0x1 
- .rodata.glyph_q.9
+ .rodata.glyph_t.6
                 0x08002740        0x7 ./Core/Src/st7796.o
  *fill*         0x08002747        0x1 
- .rodata.glyph_r.8
+ .rodata.glyph_u.5
                 0x08002748        0x7 ./Core/Src/st7796.o
  *fill*         0x0800274f        0x1 
- .rodata.glyph_s.7
+ .rodata.glyph_v.4
                 0x08002750        0x7 ./Core/Src/st7796.o
  *fill*         0x08002757        0x1 
- .rodata.glyph_t.6
+ .rodata.glyph_w.3
                 0x08002758        0x7 ./Core/Src/st7796.o
  *fill*         0x0800275f        0x1 
- .rodata.glyph_u.5
+ .rodata.glyph_x.2
                 0x08002760        0x7 ./Core/Src/st7796.o
  *fill*         0x08002767        0x1 
- .rodata.glyph_v.4
+ .rodata.glyph_y.1
                 0x08002768        0x7 ./Core/Src/st7796.o
  *fill*         0x0800276f        0x1 
- .rodata.glyph_w.3
+ .rodata.glyph_z.0
                 0x08002770        0x7 ./Core/Src/st7796.o
  *fill*         0x08002777        0x1 
- .rodata.glyph_x.2
-                0x08002778        0x7 ./Core/Src/st7796.o
- *fill*         0x0800277f        0x1 
- .rodata.glyph_y.1
-                0x08002780        0x7 ./Core/Src/st7796.o
- *fill*         0x08002787        0x1 
- .rodata.glyph_z.0
-                0x08002788        0x7 ./Core/Src/st7796.o
- *fill*         0x0800278f        0x1 
  .rodata.AHBPrescTable
-                0x08002790       0x10 ./Core/Src/system_stm32f1xx.o
-                0x08002790                AHBPrescTable
+                0x08002778       0x10 ./Core/Src/system_stm32f1xx.o
+                0x08002778                AHBPrescTable
  .rodata.aPLLMULFactorTable.1
-                0x080027a0       0x10 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+                0x08002788       0x10 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
  .rodata.aPredivFactorTable.0
-                0x080027b0        0x2 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
-                0x080027b4                        . = ALIGN (0x4)
- *fill*         0x080027b2        0x2 
+                0x08002798        0x2 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+                0x0800279c                        . = ALIGN (0x4)
+ *fill*         0x0800279a        0x2 
 
-.ARM.extab      0x080027b4        0x0
-                0x080027b4                        . = ALIGN (0x4)
+.ARM.extab      0x0800279c        0x0
+                0x0800279c                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080027b4                        . = ALIGN (0x4)
+                0x0800279c                        . = ALIGN (0x4)
 
-.ARM            0x080027b4        0x0
-                0x080027b4                        . = ALIGN (0x4)
-                0x080027b4                        __exidx_start = .
+.ARM            0x0800279c        0x0
+                0x0800279c                        . = ALIGN (0x4)
+                0x0800279c                        __exidx_start = .
  *(.ARM.exidx*)
-                0x080027b4                        __exidx_end = .
-                0x080027b4                        . = ALIGN (0x4)
+                0x0800279c                        __exidx_end = .
+                0x0800279c                        . = ALIGN (0x4)
 
-.preinit_array  0x080027b4        0x0
-                0x080027b4                        . = ALIGN (0x4)
-                0x080027b4                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800279c        0x0
+                0x0800279c                        . = ALIGN (0x4)
+                0x0800279c                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080027b4                        PROVIDE (__preinit_array_end = .)
-                0x080027b4                        . = ALIGN (0x4)
+                0x0800279c                        PROVIDE (__preinit_array_end = .)
+                0x0800279c                        . = ALIGN (0x4)
 
-.init_array     0x080027b4        0x4
-                0x080027b4                        . = ALIGN (0x4)
-                0x080027b4                        PROVIDE (__init_array_start = .)
+.init_array     0x0800279c        0x4
+                0x0800279c                        . = ALIGN (0x4)
+                0x0800279c                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080027b4        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x080027b8                        PROVIDE (__init_array_end = .)
-                0x080027b8                        . = ALIGN (0x4)
+ .init_array    0x0800279c        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x080027a0                        PROVIDE (__init_array_end = .)
+                0x080027a0                        . = ALIGN (0x4)
 
-.fini_array     0x080027b8        0x4
-                0x080027b8                        . = ALIGN (0x4)
+.fini_array     0x080027a0        0x4
+                0x080027a0                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080027b8        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x080027a0        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x080027bc                        . = ALIGN (0x4)
-                0x080027bc                        _sidata = LOADADDR (.data)
+                0x080027a4                        . = ALIGN (0x4)
+                0x080027a4                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x080027bc        0x0
- .rel.iplt      0x080027bc        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x080027a4        0x0
+ .rel.iplt      0x080027a4        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.data           0x20000000        0xc load address 0x080027bc
+.data           0x20000000        0xc load address 0x080027a4
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -2850,11 +2850,11 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  *fill*         0x20000009        0x3 
                 0x2000000c                        _edata = .
 
-.igot.plt       0x2000000c        0x0 load address 0x080027c8
+.igot.plt       0x2000000c        0x0 load address 0x080027b0
  .igot.plt      0x2000000c        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.macosaarch64_1.0.0.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x2000000c                        . = ALIGN (0x4)
 
-.bss            0x2000000c       0x78 load address 0x080027c8
+.bss            0x2000000c       0x78 load address 0x080027b0
                 0x2000000c                        _sbss = .
                 0x2000000c                        __bss_start__ = _sbss
  *(.bss)
@@ -2870,7 +2870,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x20000084                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000084      0x604 load address 0x080027c8
+                0x20000084      0x604 load address 0x080027b0
                 0x20000088                        . = ALIGN (0x8)
  *fill*         0x20000084        0x4 
                 [!provide]                        PROVIDE (end = .)
@@ -3060,19 +3060,19 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_macro   0x00015a15      0x19e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
  .debug_macro   0x00015bb3      0x194 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
 
-.debug_line     0x00000000     0x73be
+.debug_line     0x00000000     0x73bd
  .debug_line    0x00000000      0x7a3 ./Core/Src/main.o
  .debug_line    0x000007a3      0x6ae ./Core/Src/spi_test.o
- .debug_line    0x00000e51      0x909 ./Core/Src/st7796.o
- .debug_line    0x0000175a      0x6c7 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_line    0x00001e21      0x722 ./Core/Src/stm32f1xx_it.o
- .debug_line    0x00002543      0x6f2 ./Core/Src/system_stm32f1xx.o
- .debug_line    0x00002c35       0x78 ./Core/Startup/startup_stm32f103c6tx.o
- .debug_line    0x00002cad      0x926 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_line    0x000035d3      0xaed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_line    0x000040c0      0x968 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_line    0x00004a28      0xddc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_line    0x00005804     0x1bba ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+ .debug_line    0x00000e51      0x908 ./Core/Src/st7796.o
+ .debug_line    0x00001759      0x6c7 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_line    0x00001e20      0x722 ./Core/Src/stm32f1xx_it.o
+ .debug_line    0x00002542      0x6f2 ./Core/Src/system_stm32f1xx.o
+ .debug_line    0x00002c34       0x78 ./Core/Startup/startup_stm32f103c6tx.o
+ .debug_line    0x00002cac      0x926 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_line    0x000035d2      0xaed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_line    0x000040bf      0x968 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_line    0x00004a27      0xddc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_line    0x00005803     0x1bba ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
 
 .debug_str      0x00000000    0x7bbda
  .debug_str     0x00000000    0x7bbda ./Core/Src/main.o

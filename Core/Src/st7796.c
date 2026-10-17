@@ -39,7 +39,7 @@ void ST7796_Init(void)
 
     /* Memory access control */
     LCD_WriteCommand(0x36);
-    LCD_WriteData(0x48);
+    LCD_WriteData(0x28);
 
     /* RGB565, 16-bit pixel format */
     LCD_WriteCommand(0x3A);
@@ -147,19 +147,19 @@ void ST7796_FillScreen(uint16_t color)
         buffer[i + 1] = lowByte;
     }
 
-    /* Column address: 0 through 319 */
+    /* Column address: 0 through 479 */
     LCD_WriteCommand(0x2A);
     LCD_WriteData(0x00);
     LCD_WriteData(0x00);
     LCD_WriteData(0x01);
-    LCD_WriteData(0x3F);
+    LCD_WriteData(0xDF);
 
-    /* Row address: 0 through 479 */
+    /* Row address: 0 through 319 */
     LCD_WriteCommand(0x2B);
     LCD_WriteData(0x00);
     LCD_WriteData(0x00);
     LCD_WriteData(0x01);
-    LCD_WriteData(0xDF);
+    LCD_WriteData(0x3F);
 
     /* Begin display-memory write */
     LCD_WriteCommand(0x2C);
@@ -635,17 +635,11 @@ void ST7796_DrawHelloPumpkin(void)
      * These X coordinates center both lines on a 320-pixel display.
      */
 
-    ST7796_DrawText(
-        76,
-        325,
-        "PUMPKIN",
-        ST7796_WHITE,
-        4);
+	ST7796_DrawText(
+	    156,
+	    220,
+	    "PUMPKIN BIOS",
+	    ST7796_WHITE,
+	    2);
 
-    ST7796_DrawText(
-        112,
-        370,
-        "BIOS",
-        ST7796_WHITE,
-        4);
 }

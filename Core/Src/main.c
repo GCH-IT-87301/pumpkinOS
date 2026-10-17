@@ -100,129 +100,133 @@ int main(void)
 
   /* Pumpkin body */
   ST7796_FillRectangle(
-      60,
-      80,
+      140,
+      50,
       200,
-      220,
+      140,
       ST7796_ORANGE);
 
   /* Stem */
   ST7796_FillRectangle(
-      140,
+      220,
+      20,
       40,
       40,
-      50,
       ST7796_GREEN);
 
   /* Left eye */
   ST7796_FillRectangle(
-      95,
-      130,
-      30,
-      30,
+      180,
+      85,
+      25,
+      25,
       ST7796_BLACK);
 
   /* Right eye */
   ST7796_FillRectangle(
-      195,
-      130,
-      30,
-      30,
+      275,
+      85,
+      25,
+      25,
       ST7796_BLACK);
 
   /* Nose */
   ST7796_FillRectangle(
-      145,
-      180,
-      30,
-      30,
+      230,
+      120,
+      20,
+      20,
       ST7796_BLACK);
 
   /* Mouth left */
   ST7796_FillRectangle(
-      95,
-      240,
-      50,
-      20,
+      180,
+      155,
+      45,
+      15,
       ST7796_BLACK);
 
   /* Mouth center */
   ST7796_FillRectangle(
-      145,
-      260,
+      225,
+      170,
       30,
-      20,
+      15,
       ST7796_BLACK);
 
   /* Mouth right */
   ST7796_FillRectangle(
-      175,
-      240,
-      50,
-      20,
+      255,
+      155,
+      45,
+      15,
       ST7796_BLACK);
 
   ST7796_DrawHelloPumpkin();
 
-  HAL_Delay(5000);
+  HAL_Delay(3000);
+
+  /* Clear screen */
 
   ST7796_FillScreen(ST7796_BLACK);
+
+  /* Screen test the bitmap fonts */
 
   ST7796_DrawText(
       5,
       10,
       "UPPERCASE:",
       ST7796_GREEN,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
       30,
       "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
       ST7796_WHITE,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
       60,
       "lowercase:",
       ST7796_GREEN,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
       80,
       "abcdefghijklmnopqrstuvwxyz",
       ST7796_WHITE,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
       110,
       "numbers:",
       ST7796_GREEN,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
       130,
       "0123456789",
       ST7796_WHITE,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
       160,
       "symbols:",
       ST7796_GREEN,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
       180,
       ".,:;-_/\\\\()[]<>=!?",
       ST7796_WHITE,
-      2);
+      1);
 
   ST7796_DrawText(
       5,
@@ -233,7 +237,11 @@ int main(void)
       "SPI OK\n"
       "Ready>\n",
       ST7796_GREEN,
-      2);
+      1);
+
+  /* start pumpkinOS */
+
+  //pending
 
 
   /* USER CODE END 2 */
