@@ -148,8 +148,6 @@ The exact `CS`, `DC`, and `RESET` pins depend on the GPIO assignments in the STM
 
 ## Software requirements
 
-## Software Requirements
-
 ### Required
 
 The PumpkinOS source code can be opened, built, and flashed using:
