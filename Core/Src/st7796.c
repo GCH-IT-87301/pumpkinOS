@@ -702,3 +702,4 @@ void ST7796_DrawHelloPumpkin(void)
 	    2);
 
 }
+

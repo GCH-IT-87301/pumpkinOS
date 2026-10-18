@@ -96,77 +96,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   ST7796_Init();
- // ST7796_FillScreen(ST7796_GREEN);
-
-  ST7796_FillScreen(ST7796_BLACK);
-
-  /* Pumpkin body */
-  ST7796_FillRectangle(
-      140,
-      50,
-      200,
-      140,
-      ST7796_ORANGE);
-
-  /* Stem */
-  ST7796_FillRectangle(
-      220,
-      20,
-      40,
-      40,
-      ST7796_GREEN);
-
-  /* Left eye */
-  ST7796_FillRectangle(
-      180,
-      85,
-      25,
-      25,
-      ST7796_BLACK);
-
-  /* Right eye */
-  ST7796_FillRectangle(
-      275,
-      85,
-      25,
-      25,
-      ST7796_BLACK);
-
-  /* Nose */
-  ST7796_FillRectangle(
-      230,
-      120,
-      20,
-      20,
-      ST7796_BLACK);
-
-  /* Mouth left */
-  ST7796_FillRectangle(
-      180,
-      155,
-      45,
-      15,
-      ST7796_BLACK);
-
-  /* Mouth center */
-  ST7796_FillRectangle(
-      225,
-      170,
-      30,
-      15,
-      ST7796_BLACK);
-
-  /* Mouth right */
-  ST7796_FillRectangle(
-      255,
-      155,
-      45,
-      15,
-      ST7796_BLACK);
-
-  ST7796_DrawHelloPumpkin();
-
-  HAL_Delay(3000);
 
   /* Clear screen */
 
@@ -241,11 +170,12 @@ int main(void)
       "Ready>\n",
       ST7796_GREEN,
       1);
-  	  */
 
   HAL_Delay(3000);
+  */
 
   /* start pumpkinOS */
+//starting scene is set in this function within pumpkin_os.c
 
   PumpkinOS_Start();
 

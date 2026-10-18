@@ -12,5 +12,9 @@ void PumpkinConsole_Clear(void);
 void PumpkinConsole_Print(const char *text);
 void PumpkinConsole_Print_Large(const char *text);
 void PumpkinConsole_Prompt(void);
+void ShortDelay(void);
+void LongDelay(void);
+void MicroDelay(void);
+void TypeText(const char *text);
 
 #endif

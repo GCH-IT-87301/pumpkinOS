@@ -26,6 +26,13 @@ void ST7796_DrawText(
     uint16_t color,
     uint8_t scale);
 
+void DisplayChar (
+	uint16_t x,
+	uint16_t y,
+	char character,
+	uint16_t color,
+	uint8_t scale);
+
 void ST7796_DrawHelloPumpkin(void);
 
 #define ST7796_RED    0xF800

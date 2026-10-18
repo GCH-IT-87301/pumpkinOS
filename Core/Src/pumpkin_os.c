@@ -10,11 +10,14 @@
 #include "pumpkin_console.h"
 #include "main.h"
 #include "ascii_art.h"
+#include "st7796.h"
 
+void ShowBIOSScreen(void);
 void ShowBootScreen(void);
 void ShowGhostScreen(void);
 void ShowPrinterScreen(void);
 void ShowTicketScreen(void);
+void ShowJokeScreen(void);
 
 void DisplayText(const char *text)
 {
@@ -34,7 +37,83 @@ void Separator(void)
 
 void PumpkinOS_Start(void)
 {
-	ShowBootScreen();
+	//FOR DEBUG TESTING PUT DESIRED START SCREEN HERE
+	ShowPrinterScreen();
+}
+
+void ShowBIOSScreen(void)
+{
+	  /* create the pumpkin */
+
+	  /* Pumpkin body */
+	  ST7796_FillRectangle(
+	      140,
+	      50,
+	      200,
+	      140,
+	      ST7796_ORANGE);
+
+	  /* Stem */
+	  ST7796_FillRectangle(
+	      220,
+	      20,
+	      40,
+	      40,
+	      ST7796_GREEN);
+
+	  /* Left eye */
+	  ST7796_FillRectangle(
+	      180,
+	      85,
+	      25,
+	      25,
+	      ST7796_BLACK);
+
+	  /* Right eye */
+	  ST7796_FillRectangle(
+	      275,
+	      85,
+	      25,
+	      25,
+	      ST7796_BLACK);
+
+	  /* Nose */
+	  ST7796_FillRectangle(
+	      230,
+	      120,
+	      20,
+	      20,
+	      ST7796_BLACK);
+
+	  /* Mouth left */
+	  ST7796_FillRectangle(
+	      180,
+	      155,
+	      45,
+	      15,
+	      ST7796_BLACK);
+
+	  /* Mouth center */
+	  ST7796_FillRectangle(
+	      225,
+	      170,
+	      30,
+	      15,
+	      ST7796_BLACK);
+
+	  /* Mouth right */
+	  ST7796_FillRectangle(
+	      255,
+	      155,
+	      45,
+	      15,
+	      ST7796_BLACK);
+
+	  ST7796_DrawHelloPumpkin();
+
+	  HAL_Delay(3000);
+
+	  ShowBootScreen();
 }
 
 void ShowBootScreen(void)
@@ -103,44 +182,179 @@ void ShowBootScreen(void)
 
 void ShowGhostScreen(void)
 {
-    PumpkinConsole_Clear();
+	PromptText();
+	LongDelay();
+    DisplayText("cat ghostASCII");
+    ShortDelay();
+    DisplayText("\n");
     DisplayText(ghostASCII);
-    HAL_Delay(3000);
-
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
     PumpkinConsole_Clear();
-    PumpkinConsole_Print_Large(batASCII);
-    HAL_Delay(3000);
 
-    PumpkinConsole_Clear();
-    PumpkinConsole_Print_Large(catASCII);
-    HAL_Delay(3000);
-
-    PumpkinConsole_Clear();
+	PromptText();
+	LongDelay();
+    DisplayText("cat pumpkinASCII");
+    ShortDelay();
+    DisplayText("\n");
     DisplayText(pumpkinASCII);
-    HAL_Delay(3000);
-
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
     PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("cat batASCII");
+    ShortDelay();
+    DisplayText("\n");
+    DisplayText(batASCII);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("cat witchASCII");
+    ShortDelay();
+    DisplayText("\n");
     DisplayText(witchASCII);
-    HAL_Delay(3000);
-
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
     PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("cat skeletonASCII");
+    ShortDelay();
+    DisplayText("\n");
     DisplayText(skeletonASCII);
-    HAL_Delay(3000);
-
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
     PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("echo 'Happy Halloween!'");
+    ShortDelay();
+    DisplayText("\n");
     DisplayText(pumpkinOSASCII);
-    HAL_Delay(3000);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
 
     ShowPrinterScreen();
 }
 
 void ShowPrinterScreen(void)
 {
-	PumpkinConsole_Clear();
-	DisplayText("PRINTER SCENE");
-	HAL_Delay(5000);
 
-	ShowTicketScreen();
+	// yellow toner joke
+	DisplayText("PumpkinOS 6.66 Recovery Console v0.1");
+	Separator();
+	Separator();
+
+	//ifconfig joke
+	PromptText();
+	LongDelay();
+	TypeText("ifconfig");
+	ShortDelay();
+	DisplayText("eth0        UP");
+	DisplayText("            IP: 10.0.0.666");
+	Separator();
+	DisplayText("printer0    FAIL");
+	DisplayText("            IP: invalid driver");
+
+	//test-netconnection joke
+	PromptText();
+	LongDelay();
+	TypeText("test-NetConnection printer0.local -p 8080");
+	ShortDelay();
+	DisplayText("bash: test-NetConnection:");
+	ShortDelay();
+	DisplayText("command not found");
+	LongDelay();
+
+	//printer ping joke
+	PromptText();
+	LongDelay();
+	TypeText("ping printer0.local");
+	LongDelay();
+	DisplayText("PING printer0 (10.0.0.667)");
+	Separator();
+	LongDelay();
+	DisplayText("Destination unreachable:");
+	ShortDelay();
+	DisplayText("Yellow toner empty");
+	LongDelay();
+
+	//printer status joke
+	PromptText();
+	LongDelay();
+	TypeText("systemctl status printer");
+	LongDelay();
+	DisplayText("printer.service");
+	Separator();
+	LongDelay();
+	DisplayText("Driver daemon: PASS");
+	LongDelay();
+	DisplayText("Service Active: FAIL");
+	Separator();
+	LongDelay();
+	DisplayText("Reason:");
+	LongDelay();
+	DisplayText("Please replace yellow toner");
+	LongDelay();
+	PromptText();
+	LongDelay();
+	TypeText("sudo systemctl restart printer");
+	LongDelay();
+	DisplayText("Restarting printer service...");
+	LongDelay();
+	DisplayText("Restart successful");
+	LongDelay();
+	DisplayText("printer.service FAILED");
+	ShortDelay();
+	DisplayText("This problem survived reboot.");
+	LongDelay();
+
+	//just clear the goddamn screen and ask for help
+	PromptText();
+	LongDelay();
+	TypeText("clear");
+	ShortDelay();
+	PumpkinConsole_Clear();
+	PromptText(); DisplayText("");
+	PromptText(); DisplayText("");
+	PromptText(); DisplayText("");
+	PromptText();
+	TypeText("printers-suck --help");
+	ShortDelay();
+	DisplayText("bash: printers-suck:");
+	ShortDelay();
+	DisplayText("command found but there's nothing you can do about it");
+	ShortDelay();
+	PromptText();
+
+
+	ShowPrinterScreen();
 }
 
 void ShowTicketScreen(void)
@@ -149,5 +363,14 @@ void ShowTicketScreen(void)
 	DisplayText("TICKET SCREEN");
 	HAL_Delay(5000);
 
-	ShowBootScreen();
+	ShowTicketScreen();
+}
+
+void ShowJokeScreen(void)
+{
+	PumpkinConsole_Clear();
+	DisplayText("JOKE SCREEN");
+	HAL_Delay(5000);
+
+	ShowJokeScreen();
 }

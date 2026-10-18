@@ -23,7 +23,7 @@ Core/Src/pumpkin_os.o: ../Core/Src/pumpkin_os.c ../Core/Inc/pumpkin_os.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
- ../Core/Inc/ascii_art.h
+ ../Core/Inc/ascii_art.h ../Core/Inc/st7796.h
 ../Core/Inc/pumpkin_os.h:
 ../Core/Inc/pumpkin_console.h:
 ../Core/Inc/main.h:
@@ -51,3 +51,4 @@ Core/Src/pumpkin_os.o: ../Core/Src/pumpkin_os.c ../Core/Inc/pumpkin_os.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
 ../Core/Inc/ascii_art.h:
+../Core/Inc/st7796.h:
