@@ -1,8 +1,0 @@
-../Core/Src/st7796.c:7:6:ST7796_Init	8	static
-../Core/Src/st7796.c:133:6:ST7796_FillScreen	536	static
-../Core/Src/st7796.c:214:6:ST7796_FillRectangle	40	static
-../Core/Src/st7796.c:271:6:DrawLetterH	24	static
-../Core/Src/st7796.c:278:23:ST7796_GetGlyph	16	static
-../Core/Src/st7796.c:617:6:ST7796_DrawChar	40	static
-../Core/Src/st7796.c:648:6:ST7796_DrawText	48	static
-../Core/Src/st7796.c:695:6:ST7796_DrawHelloPumpkin	16	static

@@ -1,8 +1,0 @@
-../Core/Src/st7796.c:7:6:ST7796_Init	1
-../Core/Src/st7796.c:133:6:ST7796_FillScreen	4
-../Core/Src/st7796.c:214:6:ST7796_FillRectangle	2
-../Core/Src/st7796.c:271:6:DrawLetterH	1
-../Core/Src/st7796.c:278:23:ST7796_GetGlyph	87
-../Core/Src/st7796.c:617:6:ST7796_DrawChar	4
-../Core/Src/st7796.c:648:6:ST7796_DrawText	4
-../Core/Src/st7796.c:695:6:ST7796_DrawHelloPumpkin	1

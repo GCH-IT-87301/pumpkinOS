@@ -1,3 +1,0 @@
-../Core/Src/spi_test.c:6:6:SPI_Test	16	static
-../Core/Src/spi_test.c:27:6:LCD_WriteCommand	16	static
-../Core/Src/spi_test.c:52:6:LCD_WriteData	16	static

@@ -1,9 +1,0 @@
-../Core/Src/pumpkin_console.c:18:6:PumpkinConsole_Clear	8	static
-../Core/Src/pumpkin_console.c:26:6:PumpkinConsole_CheckScroll	8	static
-../Core/Src/pumpkin_console.c:37:6:PumpkinConsole_Print	24	static
-../Core/Src/pumpkin_console.c:72:6:PumpkinConsole_Prompt	8	static
-../Core/Src/pumpkin_console.c:78:6:ShortDelay	8	static
-../Core/Src/pumpkin_console.c:83:6:LongDelay	8	static
-../Core/Src/pumpkin_console.c:88:6:MicroDelay	8	static
-../Core/Src/pumpkin_console.c:93:13:PumpkinConsole_PutChar	24	static
-../Core/Src/pumpkin_console.c:129:6:TypeText	16	static
