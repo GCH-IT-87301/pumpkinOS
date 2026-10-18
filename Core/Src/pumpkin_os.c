@@ -19,6 +19,8 @@ void ShowPrinterScreen(void);
 void ShowTicketScreen(void);
 void ShowJokeScreen(void);
 
+static int bootCount = 0;
+
 void DisplayText(const char *text)
 {
     PumpkinConsole_Print(text);
@@ -38,7 +40,7 @@ void Separator(void)
 void PumpkinOS_Start(void)
 {
 	//FOR DEBUG TESTING PUT DESIRED START SCREEN HERE
-	ShowJokeScreen();
+	ShowBIOSScreen();
 }
 
 void ShowBIOSScreen(void)
@@ -160,21 +162,26 @@ void ShowBootScreen(void)
     DisplayText("Attempting grayscale mode...FAILED");
     HAL_Delay(500);
 
-    DisplayText(
-        "KERNEL PANIC: Color dependency "
-        "violation; forcing system reboot");
 
     HAL_Delay(3000);
 
-    Separator();
-    Separator();
-    Separator();
+//repeat boot sequence
 
-    DisplayText("NEED TO CODE IN THE REPEAT BOOTS HERE");
+    bootCount++;
 
-    //repeat sequences
+    if (bootCount < 3)
+    {
+        DisplayText(
+            "KERNEL PANIC: Color dependency "
+            "violation; forcing system reboot");
+        LongDelay();
+        PumpkinConsole_Clear();
 
-    HAL_Delay(3000);
+        PumpkinOS_Start();
+        return;
+    }
+
+    DisplayText("Boot process remains unsuccessful. Loading Recovery Console.");
 
     ShowPrinterScreen();
 }
@@ -746,5 +753,5 @@ void ShowJokeScreen(void)
     LongDelay();
 
 
-	ShowJokeScreen();
+	ShowBIOSScreen();
 }
