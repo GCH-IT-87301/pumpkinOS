@@ -15,20 +15,20 @@ PumpkinOS serves no practical purpose whatsoever.
 ## Screenshots
 
 Hardware:
-![Hardware](images/IMG_1350.jpeg)
-images/IMG_1351.jpeg
+![Hardware1](images/IMG_1350.jpeg)
+![Hardware2](images/IMG_1351.jpeg)
 
 STM32 Blue Pill + STLink setup:
-images/IMG_1352.jpeg
+![STLink](images/IMG_1352.jpeg)
 
 PUMPKIN BIOS splash screen:
-images/IMG_1353.jpeg
+![BIOS](images/IMG_1353.jpeg)
 
 PumpkinOS terminal prompt:
-images/IMG_1354.jpeg
+![terminal](images/IMG_1354.jpeg)
 
 ASCII art scene:
-images/IMG_1356.jpeg
+![ASCII](images/IMG_1356.jpeg)
 
 ---
 
