@@ -15,7 +15,7 @@ PumpkinOS serves no practical purpose whatsoever.
 ## Screenshots
 
 Hardware:
-![images/IMG_1350.jpeg]
+![Hardware](images/IMG_1350.jpeg)
 images/IMG_1351.jpeg
 
 STM32 Blue Pill + STLink setup:
