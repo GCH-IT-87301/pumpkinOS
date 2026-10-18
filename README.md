@@ -14,21 +14,21 @@ PumpkinOS serves no practical purpose whatsoever.
 
 ## Screenshots
 
-_Add photographs or screenshots of PumpkinOS here._
+Hardware:
+images/IMG_1350.jpeg
+images/IMG_1351.jpeg
 
-Suggested images:
+STM32 Blue Pill + STLink setup:
+images/IMG_1352.jpeg
 
-- PUMPKIN BIOS splash screen
-- PumpkinOS terminal prompt
-- ASCII art scene
-- Printer troubleshooting scene
-- STM32 and display hardware
+PUMPKIN BIOS splash screen:
+images/IMG_1353.jpeg
 
-Example Markdown:
+PumpkinOS terminal prompt:
+images/IMG_1354.jpeg
 
-```markdown
-![PumpkinOS terminal](images/pumpkin-terminal.jpg)
-```
+ASCII art scene:
+images/IMG_1356.jpeg
 
 ---
 
