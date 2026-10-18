@@ -148,10 +148,67 @@ The exact `CS`, `DC`, and `RESET` pins depend on the GPIO assignments in the STM
 
 ## Software requirements
 
+## Software Requirements
+
+### Required
+
+The PumpkinOS source code can be opened, built, and flashed using:
+
 - STM32CubeIDE
-- STM32 HAL drivers
-- ST-Link programming support
-- Git, if version control is desired
+- Git
+
+For most users, STM32CubeIDE is all that is required. Simply clone the repository, open the project, build, and flash the firmware to a compatible STM32F103C6T6A board.
+
+### Starting From Scratch
+
+If you want to learn how PumpkinOS was created from a blank microcontroller project, you should also install:
+
+- STM32CubeMX
+- STM32CubeProgrammer
+
+#### STM32CubeMX
+
+CubeMX was used to:
+
+- Select the STM32F103C6T6A target MCU
+- Configure SPI1 for the ST7796 display
+- Assign GPIO pins for LCD_CS, LCD_RS, and LCD_RST
+- Generate the project scaffolding used by STM32CubeIDE
+
+One lesson learned during development is that the project should be generated directly for **STM32CubeIDE**. Generating code for an alternative IDE/toolchain and later changing targets can create project-import problems and missing build configuration files.
+
+#### STM32CubeProgrammer
+
+CubeProgrammer became an essential troubleshooting tool during hardware bring-up.
+
+During development, situations occurred where:
+- STM32CubeIDE debugging sessions became unreliable
+- The ST-Link debugger appeared to lose communication with the target
+- Manual verification of flash contents was required
+
+CubeProgrammer was used to:
+
+- Verify successful MCU detection
+- Read device information
+- Erase flash memory
+- Program firmware images directly
+- Verify flash contents after programming
+- Recover boards that initially appeared to be unresponsive
+
+For anyone learning STM32 development, CubeProgrammer is highly recommended even if STM32CubeIDE is used for day-to-day development.
+
+### Development Environment Used
+
+PumpkinOS v0.666 was developed using:
+
+- Apple macOS (M1 OS27), Terminal, micro
+- Microsoft Copilot
+- STM32CubeIDE
+- STM32CubeMX
+- STM32CubeProgrammer
+- ST-Link V2
+- STM32F103C6T6A ("Blue Pill")
+- ST7796S 4.0" 480x320 SPI TFT Display
 
 The repository contains the STM32CubeIDE project and the custom PumpkinOS source files.
 
@@ -166,7 +223,7 @@ The repository contains the STM32CubeIDE project and the custom PumpkinOS source
 5. Build the project.
 6. Connect the STM32 through an ST-Link programmer.
 7. Flash the firmware.
-8. Watch a tiny pumpkin-themed computer make increasingly poor decisions.
+8. Watch a tiny pumpkin-themed computer make really terrible jokes.
 
 If the display remains white, verify the following before rewriting the entire driver:
 
@@ -175,7 +232,7 @@ If the display remains white, verify the following before rewriting the entire d
 - SPI clock activity
 - MOSI/SDI activity
 - CS, DC, and RESET connections
-- Header solder joints
+- Header solder joints (don't ask me how I know this)
 
 ---
 
