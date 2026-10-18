@@ -38,7 +38,7 @@ void Separator(void)
 void PumpkinOS_Start(void)
 {
 	//FOR DEBUG TESTING PUT DESIRED START SCREEN HERE
-	ShowTicketScreen();
+	ShowJokeScreen();
 }
 
 void ShowBIOSScreen(void)
@@ -577,14 +577,174 @@ void ShowTicketScreen(void)
 
     LongDelay();
 
-	ShowTicketScreen();
+	ShowJokeScreen();
 }
 
 void ShowJokeScreen(void)
 {
 	PumpkinConsole_Clear();
-	DisplayText("JOKE SCREEN");
-	HAL_Delay(5000);
+
+    DisplayText("PumpkinOS Joke Module v1.666 - Halloween Edition");
+    DisplayText("Loading dad-joke database...");
+    LongDelay();
+
+    DisplayText("[ OK ] Skeleton jokes");
+    ShortDelay();
+    DisplayText("[ OK ] Ghost jokes");
+    ShortDelay();
+    DisplayText("[ OK ] Vampire jokes");
+    ShortDelay();
+    DisplayText("[ OK ] Eye roll module");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Why don't skeletons fight each other?");
+    LongDelay();
+    DisplayText("Because they don't have the guts.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo What room does a ghost avoid?");
+    LongDelay();
+    DisplayText("The living room.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo What is the witch's favorite subject in school?");
+    LongDelay();
+    DisplayText("Spelling.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo What is a ghost's favorite Linux command?");
+    LongDelay();
+    DisplayText("ps -ef");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Why was the haunted server always busy?");
+    LongDelay();
+    DisplayText("Too many ghost processes.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Why did the pumpkin get promoted?");
+    LongDelay();
+    DisplayText("Because it was out standing in its field.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Why was the ghost bad at lying?");
+    LongDelay();
+    DisplayText("You could see right through him.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo What was the bat's favorite thing to study in school?");
+    LongDelay();
+    DisplayText("The alpha-bat.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Why did the skeleton skip the party?");
+    LongDelay();
+    DisplayText("He had no body to go with.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo What do you get when you divide a pumpkin's circumference by its diameter?");
+    LongDelay();
+    DisplayText("Pumpkin Pi.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Why are graveyards so noisy?");
+    LongDelay();
+    DisplayText("Because of all the coffin.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo What does a vegetarian zombie eat?");
+    LongDelay();
+    DisplayText("GRAAAAAINS!");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Why did the ghost go to the doctor?");
+    LongDelay();
+    DisplayText("He was feeling a little boo-hoo.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo What kind of music do mummies like?");
+    LongDelay();
+    DisplayText("Wrap music.");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("echo Initializing final joke...");
+    LongDelay();
+    DisplayText("ERROR: joke quality threshold exceeded");
+    DisplayText("WARNING: spouse terminal eyeroll detected");
+    LongDelay();
+
+    Separator();
+
+    PromptText(); LongDelay();
+    TypeText("exit");
+    LongDelay();
+
+    DisplayText("ERROR: Dad jokes are a protected system service.");
+    ShortDelay();
+    DisplayText("Refusing shutdown request.");
+    LongDelay();
+
+    Separator();
+
+    DisplayText("PumpkinOS Joke Module Complete. User may stop rolling eyes in:");
+    ShortDelay();
+    DisplayText("5");
+    ShortDelay();
+    DisplayText("4");
+    ShortDelay();
+    DisplayText("3");
+    ShortDelay();
+    DisplayText("2");
+    LongDelay();
+    DisplayText("1");
+
+    LongDelay();
+
 
 	ShowJokeScreen();
 }
