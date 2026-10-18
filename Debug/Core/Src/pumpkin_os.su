@@ -4,7 +4,7 @@
 ../Core/Src/pumpkin_os.c:38:6:PumpkinOS_Start	8	static
 ../Core/Src/pumpkin_os.c:44:6:ShowBIOSScreen	16	static
 ../Core/Src/pumpkin_os.c:119:6:ShowBootScreen	8	static
-../Core/Src/pumpkin_os.c:183:6:ShowGhostScreen	8	static
-../Core/Src/pumpkin_os.c:266:6:ShowPrinterScreen	8	static
+../Core/Src/pumpkin_os.c:183:6:ShowPrinterScreen	8	static
+../Core/Src/pumpkin_os.c:280:6:ShowGhostScreen	8	static
 ../Core/Src/pumpkin_os.c:363:6:ShowTicketScreen	8	static
-../Core/Src/pumpkin_os.c:372:6:ShowJokeScreen	8	static
+../Core/Src/pumpkin_os.c:583:6:ShowJokeScreen	8	static

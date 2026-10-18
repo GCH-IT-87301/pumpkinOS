@@ -38,7 +38,7 @@ void Separator(void)
 void PumpkinOS_Start(void)
 {
 	//FOR DEBUG TESTING PUT DESIRED START SCREEN HERE
-	ShowPrinterScreen();
+	ShowTicketScreen();
 }
 
 void ShowBIOSScreen(void)
@@ -176,92 +176,9 @@ void ShowBootScreen(void)
 
     HAL_Delay(3000);
 
-    ShowGhostScreen();
-}
-
-
-void ShowGhostScreen(void)
-{
-	PromptText();
-	LongDelay();
-    DisplayText("cat ghostASCII");
-    ShortDelay();
-    DisplayText("\n");
-    DisplayText(ghostASCII);
-    Separator();
-    ShortDelay();
-    PromptText();
-    LongDelay();
-    DisplayText("clear");
-    PumpkinConsole_Clear();
-
-	PromptText();
-	LongDelay();
-    DisplayText("cat pumpkinASCII");
-    ShortDelay();
-    DisplayText("\n");
-    DisplayText(pumpkinASCII);
-    Separator();
-    ShortDelay();
-    PromptText();
-    LongDelay();
-    DisplayText("clear");
-    PumpkinConsole_Clear();
-
-	PromptText();
-	LongDelay();
-    DisplayText("cat batASCII");
-    ShortDelay();
-    DisplayText("\n");
-    DisplayText(batASCII);
-    Separator();
-    ShortDelay();
-    PromptText();
-    LongDelay();
-    DisplayText("clear");
-    PumpkinConsole_Clear();
-
-	PromptText();
-	LongDelay();
-    DisplayText("cat witchASCII");
-    ShortDelay();
-    DisplayText("\n");
-    DisplayText(witchASCII);
-    Separator();
-    ShortDelay();
-    PromptText();
-    LongDelay();
-    DisplayText("clear");
-    PumpkinConsole_Clear();
-
-	PromptText();
-	LongDelay();
-    DisplayText("cat skeletonASCII");
-    ShortDelay();
-    DisplayText("\n");
-    DisplayText(skeletonASCII);
-    Separator();
-    ShortDelay();
-    PromptText();
-    LongDelay();
-    DisplayText("clear");
-    PumpkinConsole_Clear();
-
-	PromptText();
-	LongDelay();
-    DisplayText("echo 'Happy Halloween!'");
-    ShortDelay();
-    DisplayText("\n");
-    DisplayText(pumpkinOSASCII);
-    Separator();
-    ShortDelay();
-    PromptText();
-    LongDelay();
-    DisplayText("clear");
-    PumpkinConsole_Clear();
-
     ShowPrinterScreen();
 }
+
 
 void ShowPrinterScreen(void)
 {
@@ -357,14 +274,308 @@ void ShowPrinterScreen(void)
 
 	HAL_Delay(3000);
 
-	ShowPrinterScreen();
+	ShowGhostScreen();
+}
+
+void ShowGhostScreen(void)
+{
+	PromptText();
+	LongDelay();
+    DisplayText("cat ghostASCII");
+    ShortDelay();
+    DisplayText("\n");
+    DisplayText(ghostASCII);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("cat pumpkinASCII");
+    ShortDelay();
+    DisplayText("\n");
+    DisplayText(pumpkinASCII);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("cat batASCII");
+    ShortDelay();
+    DisplayText("\n");
+    DisplayText(batASCII);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("cat witchASCII");
+    ShortDelay();
+    DisplayText("\n");
+    DisplayText(witchASCII);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("cat skeletonASCII");
+    ShortDelay();
+    DisplayText("\n");
+    DisplayText(skeletonASCII);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
+
+	PromptText();
+	LongDelay();
+    DisplayText("echo 'Happy Halloween!'");
+    ShortDelay();
+    DisplayText("\n");
+    DisplayText(pumpkinOSASCII);
+    Separator();
+    ShortDelay();
+    PromptText();
+    LongDelay();
+    DisplayText("clear");
+    PumpkinConsole_Clear();
+
+    ShowTicketScreen();
 }
 
 void ShowTicketScreen(void)
 {
 	PumpkinConsole_Clear();
-	DisplayText("TICKET SCREEN");
-	HAL_Delay(5000);
+
+    // Open Desk365 CLI
+    PromptText();
+    TypeText("desk365 tickets --status unresolved");
+    ShortDelay();
+    DisplayText("Connecting to GCH Help Desk...");
+    ShortDelay();
+    DisplayText("Authenticating root@pumpkin...");
+    ShortDelay();
+    DisplayText("[ OK ] Authentication successful");
+    LongDelay();
+
+    DisplayText("Loading unresolved tickets...");
+    LongDelay();
+    DisplayText("13 tickets found");
+    LongDelay();
+
+    Separator();
+
+    // Ticket 1379: Printer for billing
+    DisplayText("#1379  PRINTER FOR BILLING");
+    DisplayText("Priority: HIGH");
+    DisplayText("Status:  ESCALATED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Issue:");
+    DisplayText("Printer says Replace Yellow Toner");
+    ShortDelay();
+
+    DisplayText("Work performed:");
+    DisplayText("[ OK ] Replaced yellow toner");
+    DisplayText("[ OK ] Restarted printer");
+    DisplayText("[ OK ] Reinstalled driver");
+    DisplayText("[ OK ] Performed ritual cleansing");
+    ShortDelay();
+
+    DisplayText("Result:");
+    DisplayText("[FAIL] Replace Yellow Toner");
+    ShortDelay();
+
+    DisplayText("Assigned to:");
+    DisplayText("Sinners");
+    LongDelay();
+
+    Separator();
+    LongDelay();
+
+    // Ticket 1343: New hire setup
+    DisplayText("#1343  NEW HIRE SETUP");
+    DisplayText("Priority: NORMAL");
+    DisplayText("Status:  IN PROGRESS");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Checklist:");
+    DisplayText("[ OK ] Create user account");
+    DisplayText("[ OK ] Assign Microsoft 365 license");
+    DisplayText("[ OK ] Configure MFA");
+    DisplayText("[ OK ] Prepare workstation");
+    DisplayText("[FAIL] User has not started yet");
+    ShortDelay();
+
+    DisplayText("Waiting on:");
+    DisplayText("The linear passage of time");
+    LongDelay();
+
+    Separator();
+    LongDelay();
+
+    // SPF and DNS joke
+    DisplayText("#24259  EMAIL SPF CONFIGURATION");
+    DisplayText("Priority: MEDIUM");
+    DisplayText("Status:  RESOLVED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Original suspected cause:");
+    DisplayText("DNS");
+    ShortDelay();
+
+    DisplayText("Actual cause:");
+    DisplayText("DNS");
+    ShortDelay();
+
+    DisplayText("Final root cause:");
+    DisplayText("It was DNS");
+    LongDelay();
+
+    Separator();
+    LongDelay();
+
+    // Keyboard in drawer
+    DisplayText("#0031  KEYBOARD NOT WORKING");
+    DisplayText("Priority: URGENT");
+    DisplayText("Status:  CLOSED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Issue:");
+    DisplayText("User has no keyboard");
+    ShortDelay();
+
+    DisplayText("Resolution:");
+    DisplayText("Keyboard discovered in desk drawer");
+    ShortDelay();
+
+    DisplayText("Root cause:");
+    DisplayText("Desk drawer was closed");
+    LongDelay();
+
+    Separator();
+	LongDelay();
+
+    // Haunted workstation
+    DisplayText("#0666  WORKSTATION TURNS ON AT 3:00 AM");
+    DisplayText("Priority: CRITICAL");
+    DisplayText("Status:  ESCALATED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Troubleshooting:");
+    DisplayText("[ OK ] Disabled Wake-on-LAN");
+    DisplayText("[ OK ] Disabled scheduled tasks");
+    DisplayText("[ OK ] Unplugged workstation");
+    ShortDelay();
+
+    DisplayText("Result:");
+    DisplayText("Workstation still turns itself on");
+    ShortDelay();
+
+    DisplayText("Assigned service:");
+    DisplayText("ghostd.service");
+    LongDelay();
+
+    Separator();
+    LongDelay();
+
+    // Password reset
+    DisplayText("#1024  PASSWORD RESET");
+    DisplayText("Priority: HIGH");
+    DisplayText("Status:  CLOSED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("User statement:");
+    DisplayText("\"I never changed my password.\"");
+    ShortDelay();
+
+    DisplayText("Audit log:");
+    DisplayText("Password changed 17 times today");
+    ShortDelay();
+
+    DisplayText("Resolution:");
+    DisplayText("Password changed again");
+    LongDelay();
+
+    Separator();
+    LongDelay();
+
+    // Missing monitor
+    DisplayText("#0404  MISSING MONITOR");
+    DisplayText("Priority: NORMAL");
+    DisplayText("Status:  OPEN");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Description:");
+    DisplayText("Monitor not found");
+    ShortDelay();
+
+    DisplayText("Troubleshooting:");
+    DisplayText("Asked user to turn monitor on");
+    ShortDelay();
+
+    DisplayText("Response:");
+    DisplayText("\"Which one is the monitor?\"");
+    ShortDelay();
+
+    DisplayText("Technician notes:");
+    DisplayText("Monitor located in drawer next to missing keyboard");
+    LongDelay();
+
+    Separator();
+    LongDelay();
+
+    // Coffee machine
+    DisplayText("#0500  COFFEE MACHINE OFFLINE");
+    DisplayText("Priority: CATASTROPHIC");
+    DisplayText("Status:  ALL HANDS");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Ping result:");
+    DisplayText("Destination host unreachable");
+    ShortDelay();
+
+    DisplayText("Business impact:");
+    DisplayText("Entire IT department");
+    ShortDelay();
+
+    DisplayText("Temporary workaround:");
+    DisplayText("Nobody speak to IT before 09:00");
+    LongDelay();
+
+    Separator();
+    LongDelay();
+    DisplayText("End of ticket status command.");
+	Separator();
+
+    PromptText();
+
+    LongDelay();
 
 	ShowTicketScreen();
 }
