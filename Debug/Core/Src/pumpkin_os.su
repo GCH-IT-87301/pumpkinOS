@@ -6,5 +6,5 @@
 ../Core/Src/pumpkin_os.c:119:6:ShowBootScreen	8	static
 ../Core/Src/pumpkin_os.c:183:6:ShowGhostScreen	8	static
 ../Core/Src/pumpkin_os.c:266:6:ShowPrinterScreen	8	static
-../Core/Src/pumpkin_os.c:360:6:ShowTicketScreen	8	static
-../Core/Src/pumpkin_os.c:369:6:ShowJokeScreen	8	static
+../Core/Src/pumpkin_os.c:363:6:ShowTicketScreen	8	static
+../Core/Src/pumpkin_os.c:372:6:ShowJokeScreen	8	static

@@ -468,6 +468,17 @@ static const uint8_t *ST7796_GetGlyph(char character)
 	    0x04
 	};
 
+    static const uint8_t glyph_apostrophe[7] =
+    {
+        0b00110,
+        0b00110,
+        0b00010,
+        0b00000,
+        0b00000,
+        0b00000,
+        0b00000
+    };
+
 //lower case letters
 	static const uint8_t glyph_a[7] = {0x00,0x00,0x0E,0x01,0x0F,0x11,0x0F};
 	static const uint8_t glyph_b[7] = {0x10,0x10,0x1E,0x11,0x11,0x11,0x1E};
@@ -567,6 +578,7 @@ static const uint8_t *ST7796_GetGlyph(char character)
 	    case '~': return glyph_tilde;
 	    case '*': return glyph_asterisk;
 	    case '|': return glyph_pipe;
+	    case '\'': return glyph_apostrophe;
 
 	    //lower case letters
 	    case 'a': return glyph_a;

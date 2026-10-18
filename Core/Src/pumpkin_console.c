@@ -23,6 +23,17 @@ void PumpkinConsole_Clear(void)
     cursorY = 5;
 }
 
+void PumpkinConsole_CheckScroll(void)
+{
+    if(cursorY > 300)
+    {
+        PumpkinConsole_Clear();
+
+        cursorX = 5;
+        cursorY = 5;
+    }
+}
+
 void PumpkinConsole_Print(const char *text)
 {
     while(*text)
@@ -31,6 +42,8 @@ void PumpkinConsole_Print(const char *text)
         {
             cursorX = 5;
             cursorY += 10;
+
+            PumpkinConsole_CheckScroll();
 
             text++;
             continue;

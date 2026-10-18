@@ -267,8 +267,8 @@ void ShowPrinterScreen(void)
 {
 
 	// yellow toner joke
+	PumpkinConsole_Clear();
 	DisplayText("PumpkinOS 6.66 Recovery Console v0.1");
-	Separator();
 	Separator();
 
 	//ifconfig joke
@@ -341,10 +341,12 @@ void ShowPrinterScreen(void)
 	TypeText("clear");
 	ShortDelay();
 	PumpkinConsole_Clear();
-	PromptText(); DisplayText("");
-	PromptText(); DisplayText("");
-	PromptText(); DisplayText("");
+	ShortDelay();
+	PromptText(); LongDelay(); DisplayText(""); ShortDelay();
+	PromptText(); DisplayText(""); ShortDelay();
+	PromptText(); DisplayText(""); ShortDelay();
 	PromptText();
+	LongDelay();
 	TypeText("printers-suck --help");
 	ShortDelay();
 	DisplayText("bash: printers-suck:");
@@ -353,6 +355,7 @@ void ShowPrinterScreen(void)
 	ShortDelay();
 	PromptText();
 
+	HAL_Delay(3000);
 
 	ShowPrinterScreen();
 }

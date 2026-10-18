@@ -1,0 +1,812 @@
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @author         : GCH-IT-87301
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2026 Christopher Hoover.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+//includes so we get all the functions we need
+#include <stdint.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <time.h>
+#include "ascii_art.h"
+
+typedef enum
+{
+    STATE_BOOT,
+    STATE_PRINTER,
+    STATE_GHOST,
+    STATE_TICKETS,
+    STATE_JOKES
+} PumpkinState;
+
+//global variable
+PumpkinState currentState = STATE_BOOT;
+
+//function prototypes
+void ShowBootScreen(void);
+void ShowPrinterScreen(void);
+void ShowGhostScreen(void);
+void ShowTicketScreen(void);
+void ShowJokeScreen(void);
+
+void ShortDelay(void);
+void LongDelay(void);
+void FixedDelay(int seconds);
+void MicroDelay(void);
+
+void BlinkingCursor(int seconds);
+void ThinkingDots();
+void Separator(void);
+
+void DisplayText(const char *text);
+void TypeText(const char *text);
+void PromptText(void);
+
+
+//create state machine
+int main(void)
+{
+	srand(time(NULL));
+	
+    while(1)
+    {
+        switch(currentState)
+
+        {
+            case STATE_BOOT:
+                ShowBootScreen();
+                break;
+
+            case STATE_PRINTER:
+                ShowPrinterScreen();
+                break;
+
+            case STATE_GHOST:
+                ShowGhostScreen();
+                break;
+
+            case STATE_TICKETS:
+                ShowTicketScreen();
+                break;
+
+            case STATE_JOKES:
+            	ShowJokeScreen();
+            	break;
+        }
+
+    }
+
+    return 0;
+}
+
+//text effect stuff
+void DisplayText(const char *text)
+{
+	printf("\033[32m%s\033[0m\n", text);
+}
+
+void BlinkingCursor(int seconds)
+{
+	int i;
+	for (i = 0; i < seconds *2; i++)
+	{
+		printf("\033[32m_\033[0m");
+		fflush(stdout);
+
+		usleep(500000);
+
+		printf("\b \b");
+		fflush(stdout);
+
+		usleep(500000);
+	}
+}
+
+void ThinkingDots(void)
+{
+	printf("\033[32m.\033[0m");
+	fflush(stdout);
+	ShortDelay();
+
+	printf("\033[32m.\033[0m");
+	fflush(stdout);
+	ShortDelay();
+	
+	printf("\033[32m.\033[0m");
+	fflush(stdout);
+
+	printf("\n");
+}
+
+void TypeText(const char *text)
+{
+	while (*text)
+	{
+		printf("\033[32m%c\033[0m", *text);
+		fflush(stdout);
+
+		MicroDelay();
+		text++;
+	}
+
+	putchar('\n');
+}
+
+void PromptText(void)
+{
+	printf("\033[32mroot@pumpkin:~# \033[0m");
+	fflush(stdout);
+}
+
+void Separator(void)
+{
+	DisplayText("");
+}
+
+//timing stuff
+void ShortDelay(void)
+{
+	int delayMs = 200 + (rand() % 601);
+	usleep(delayMs * 1000);
+}
+
+void LongDelay(void)
+{
+	int delayMs = 600 + (rand() % 2001);
+	usleep(delayMs * 1000);
+}
+
+void FixedDelay(int seconds)
+{
+	sleep(seconds);
+}
+
+void MicroDelay(void)
+{
+	int delayMs = 60 + (rand() % 101);
+	usleep(delayMs * 1000);
+}
+
+int bootCount = 0;
+
+           
+
+//content for BOOT SCENE
+void ShowBootScreen(void)
+{
+    // editable boot sequence
+    system("clear");
+    Separator();
+    Separator();
+    Separator();
+    DisplayText(pumpkinOSASCII);
+    FixedDelay(10);
+    system("clear");
+    LongDelay();
+    DisplayText("Booting PumpkinOS 6.66...");
+    LongDelay();
+	Separator();
+    DisplayText("[ OK ] Candy Filesystem");
+	ShortDelay();
+    DisplayText("[ OK ] Ghost Service");
+	ShortDelay();
+    DisplayText("[ OK ] Skeleton Daemon");
+	ShortDelay();
+    DisplayText("[FAIL] Printer Service");
+	LongDelay();
+    Separator();
+    DisplayText("Reason:");
+    DisplayText("Yellow toner empty");
+	ShortDelay();
+	ThinkingDots();
+	DisplayText("Attempting bypass...");
+	LongDelay();
+	DisplayText("Attempting bypass...FAILED");
+	ShortDelay();
+	DisplayText("Attempting grayscale mode...");
+	LongDelay();
+	DisplayText("Attempting grayscale mode...FAILED");
+	ThinkingDots();
+	FixedDelay(3);
+    DisplayText("KERNEL PANIC: Color dependency violation; forcing system reboot");
+    ShortDelay();
+	BlinkingCursor(5);
+    system("clear");
+
+    bootCount++;
+
+    if (bootCount < 3)
+    {
+    	currentState = STATE_BOOT;
+    }
+    else
+    {
+    	bootCount = 0;
+    	currentState = STATE_PRINTER;
+    }
+}
+
+//content for PRINTER SCENE
+void ShowPrinterScreen(void)
+{
+    // yellow toner joke
+    system("clear");
+    Separator();
+    DisplayText("PumpkinOS 6.66 Recovery Console v0.1");
+	Separator();
+	Separator();
+
+	//ifconfig joke
+	PromptText();
+	TypeText("ifconfig");
+	ShortDelay();
+	DisplayText("eth0        UP");
+	DisplayText("            IP: 10.0.0.666");
+	Separator();
+	DisplayText("printer0    FAIL");
+	DisplayText("            IP: invalid driver");
+
+	//test-netconnection joke
+	PromptText();
+	LongDelay();
+	TypeText("test-NetConnection printer0.local -p 8080");
+	ShortDelay();
+	DisplayText("bash: test-NetConnection:");
+	ShortDelay();
+	DisplayText("command not found");
+	LongDelay();
+
+	//printer ping joke
+	PromptText();
+	FixedDelay(4);
+	TypeText("ping printer0.local");
+	LongDelay();
+	DisplayText("PING printer0 (10.0.0.667)");
+	Separator();
+	FixedDelay(3);
+	DisplayText("Destination unreachable:");
+	ShortDelay();
+	DisplayText("Yellow toner empty");
+	LongDelay();
+
+	//printer status joke
+	PromptText();
+	FixedDelay(3);
+	TypeText("systemctl status printer");
+	LongDelay();
+	DisplayText("printer.service");
+	Separator();
+	LongDelay();
+	DisplayText("Driver daemon: PASS");
+	LongDelay();
+	DisplayText("Service Active: FAIL");
+	Separator();
+	LongDelay();
+	DisplayText("Reason:");
+	LongDelay();
+	DisplayText("Please replace yellow toner");
+	LongDelay();
+	PromptText();
+	FixedDelay(2);
+	TypeText("sudo systemctl restart printer");
+	LongDelay();
+	DisplayText("Restarting printer service...");
+	FixedDelay(4);
+	DisplayText("Restart successful");
+	FixedDelay(3);
+	DisplayText("printer.service FAILED");
+	ShortDelay();
+	DisplayText("This problem survived reboot.");
+	LongDelay();
+
+	//just clear the goddamn screen and ask for help
+	PromptText();
+	FixedDelay(5);
+	TypeText("clear");
+	ShortDelay();
+	system("clear");
+	PromptText();
+	LongDelay();
+	printf("\n");
+	PromptText();
+	ShortDelay();
+	printf("\n");
+	PromptText();
+	ShortDelay();
+	printf("\n");
+	PromptText();
+	TypeText("printers-suck --help");
+	ShortDelay();
+	DisplayText("bash: printers-suck:");
+	ShortDelay();
+	DisplayText("command found but there's nothing you can do about it");
+	ShortDelay();
+	PromptText();	
+    
+    FixedDelay(7);
+
+    PromptText();
+    TypeText("clear");
+    ShortDelay();
+    system("clear");
+
+    currentState = STATE_GHOST;
+}
+
+//content for ASCII SCENE
+void ShowGhostScreen(void)
+{
+    // ghost ascii art
+	PromptText();
+	TypeText("cat ghost.ascii");
+	DisplayText(ghostASCII);
+	ShortDelay();
+	PromptText();
+    FixedDelay(7);
+
+	//bat
+	TypeText("cat bat.ascii");
+	DisplayText(batASCII);
+	ShortDelay();
+	PromptText();
+    FixedDelay(7);
+
+	//cat
+	TypeText("cat cat.ascii");
+	DisplayText(catASCII);
+	ShortDelay();
+	PromptText();
+    FixedDelay(7);
+
+	//pumpkin
+	TypeText("cat pumpkin.ascii");
+	DisplayText(pumpkinASCII);
+	ShortDelay();
+	PromptText();
+    FixedDelay(7);
+
+	//skeleton
+	TypeText("cat skeleton.ascii");
+	DisplayText(skeletonASCII);
+	ShortDelay();
+	PromptText();
+    FixedDelay(7);
+
+	//witch
+	TypeText("cat witch.ascii");
+	DisplayText(witchASCII);
+	ShortDelay();
+	PromptText();
+    FixedDelay(7);
+
+    //pumpkinOS
+    TypeText("cat pumpkinOS.ascii");
+    DisplayText(pumpkinOSASCII);
+    ShortDelay();
+    PromptText();
+    FixedDelay(7);
+
+
+    currentState = STATE_TICKETS;
+}
+
+//content for TICKET SCENE
+void ShowTicketScreen(void)
+{
+    // Open Desk365 CLI
+    PromptText();
+    TypeText("desk365 tickets --status unresolved");
+    ShortDelay();
+
+    DisplayText("Connecting to GCH Help Desk...");
+    ShortDelay();
+    DisplayText("Authenticating root@pumpkin...");
+    ShortDelay();
+    DisplayText("[ OK ] Authentication successful");
+    LongDelay();
+
+    DisplayText("Loading unresolved tickets...");
+    FixedDelay(3);
+    DisplayText("13 tickets found");
+    LongDelay();
+
+    Separator();
+
+    // Ticket 1379: Printer for billing
+    DisplayText("#1379  PRINTER FOR BILLING");
+    DisplayText("Priority: HIGH");
+    DisplayText("Status:  ESCALATED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Issue:");
+    DisplayText("Printer says Replace Yellow Toner");
+    ShortDelay();
+
+    DisplayText("Work performed:");
+    DisplayText("[ OK ] Replaced yellow toner");
+    DisplayText("[ OK ] Restarted printer");
+    DisplayText("[ OK ] Reinstalled driver");
+    DisplayText("[ OK ] Performed ritual cleansing");
+    ShortDelay();
+
+    DisplayText("Result:");
+    DisplayText("[FAIL] Replace Yellow Toner");
+    ShortDelay();
+
+    DisplayText("Assigned to:");
+    DisplayText("Sinners");
+    LongDelay();
+
+    Separator();
+    FixedDelay(8);
+
+    // Ticket 1343: New hire setup
+    DisplayText("#1343  NEW HIRE SETUP");
+    DisplayText("Priority: NORMAL");
+    DisplayText("Status:  IN PROGRESS");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Checklist:");
+    DisplayText("[ OK ] Create user account");
+    DisplayText("[ OK ] Assign Microsoft 365 license");
+    DisplayText("[ OK ] Configure MFA");
+    DisplayText("[ OK ] Prepare workstation");
+    DisplayText("[FAIL] User has not started yet");
+    ShortDelay();
+
+    DisplayText("Waiting on:");
+    DisplayText("The linear passage of time");
+    LongDelay();
+
+    Separator();
+    FixedDelay(8);
+
+    // SPF and DNS joke
+    DisplayText("#24259  EMAIL SPF CONFIGURATION");
+    DisplayText("Priority: MEDIUM");
+    DisplayText("Status:  RESOLVED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Original suspected cause:");
+    DisplayText("DNS");
+    ShortDelay();
+
+    DisplayText("Actual cause:");
+    DisplayText("DNS");
+    ShortDelay();
+
+    DisplayText("Final root cause:");
+    DisplayText("It was DNS");
+    LongDelay();
+
+    Separator();
+    FixedDelay(8);
+
+    // Keyboard in drawer
+    DisplayText("#0031  KEYBOARD NOT WORKING");
+    DisplayText("Priority: URGENT");
+    DisplayText("Status:  CLOSED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Issue:");
+    DisplayText("User has no keyboard");
+    ShortDelay();
+
+    DisplayText("Resolution:");
+    DisplayText("Keyboard discovered in desk drawer");
+    ShortDelay();
+
+    DisplayText("Root cause:");
+    DisplayText("Desk drawer was closed");
+    LongDelay();
+
+    Separator();
+	FixedDelay(7);
+
+    // Haunted workstation
+    DisplayText("#0666  WORKSTATION TURNS ON AT 3:00 AM");
+    DisplayText("Priority: CRITICAL");
+    DisplayText("Status:  ESCALATED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Troubleshooting:");
+    DisplayText("[ OK ] Disabled Wake-on-LAN");
+    DisplayText("[ OK ] Disabled scheduled tasks");
+    DisplayText("[ OK ] Unplugged workstation");
+    ShortDelay();
+
+    DisplayText("Result:");
+    DisplayText("Workstation still turns itself on");
+    ShortDelay();
+
+    DisplayText("Assigned service:");
+    DisplayText("ghostd.service");
+    LongDelay();
+
+    Separator();
+    FixedDelay(8);
+
+    // Password reset
+    DisplayText("#1024  PASSWORD RESET");
+    DisplayText("Priority: HIGH");
+    DisplayText("Status:  CLOSED");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("User statement:");
+    DisplayText("\"I never changed my password.\"");
+    ShortDelay();
+
+    DisplayText("Audit log:");
+    DisplayText("Password changed 17 times today");
+    ShortDelay();
+
+    DisplayText("Resolution:");
+    DisplayText("Password changed again");
+    LongDelay();
+
+    Separator();
+    FixedDelay(8);
+
+    // Missing monitor
+    DisplayText("#0404  MISSING MONITOR");
+    DisplayText("Priority: NORMAL");
+    DisplayText("Status:  OPEN");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Description:");
+    DisplayText("Monitor not found");
+    ShortDelay();
+
+    DisplayText("Troubleshooting:");
+    DisplayText("Asked user to turn monitor on");
+    ShortDelay();
+
+    DisplayText("Response:");
+    DisplayText("\"Which one is the monitor?\"");
+    ShortDelay();
+
+    DisplayText("Technician notes:");
+    DisplayText("Monitor located in drawer next to missing keyboard");
+    LongDelay();
+
+    Separator();
+    FixedDelay(8);
+
+    // Coffee machine
+    DisplayText("#0500  COFFEE MACHINE OFFLINE");
+    DisplayText("Priority: CATASTROPHIC");
+    DisplayText("Status:  ALL HANDS");
+    ShortDelay();
+
+    DisplayText("");
+    DisplayText("Ping result:");
+    DisplayText("Destination host unreachable");
+    ShortDelay();
+
+    DisplayText("Business impact:");
+    DisplayText("Entire IT department");
+    ShortDelay();
+
+    DisplayText("Temporary workaround:");
+    DisplayText("Nobody speak to IT before 09:00");
+    LongDelay();
+
+    Separator();
+    FixedDelay(6);
+    DisplayText("End of ticket status command.");
+	Separator();
+
+    PromptText();
+
+    FixedDelay(7);
+
+    currentState = STATE_JOKES;
+}
+
+//joke scene content
+void ShowJokeScreen(void)
+{
+    system("clear");
+
+    DisplayText("PumpkinOS Joke Module v1.0");
+    DisplayText("Loading dad-joke database...");
+    LongDelay();
+
+    DisplayText("[ OK ] Skeleton jokes");
+    ShortDelay();
+    DisplayText("[ OK ] Ghost jokes");
+    ShortDelay();
+    DisplayText("[ OK ] Vampire jokes");
+    ShortDelay();
+    DisplayText("[ OK ] Embarrassment module");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Why don't skeletons fight each other?");
+    LongDelay();
+    DisplayText("Because they don't have the guts.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What room does a ghost avoid?");
+    LongDelay();
+    DisplayText("The living room.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What is the witch's favorite subject in school?");
+    LongDelay();
+    DisplayText("Spelling.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What is a ghost's favorite Linux command?");
+    LongDelay();
+    DisplayText("ps -ef");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Why was the haunted server always busy?");
+    LongDelay();
+    DisplayText("Too many ghost processes.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Why did the pumpkin get promoted?");
+    LongDelay();
+    DisplayText("Because it was out standing in its field.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Why was the ghost bad at lying?");
+    LongDelay();
+    DisplayText("You could see right through him.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What was the bat's favorite thing to study in school?");
+    LongDelay();
+    DisplayText("The alpha-bat.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Why did the skeleton skip the party?");
+    LongDelay();
+    DisplayText("He had no body to go with.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What happened to the jack-o-lantern that crossed the road on its way to the party?");
+    LongDelay();
+    DisplayText("It got smashed.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What do you get when you divide a pumpkin's circumference by its diameter?");
+    LongDelay();
+    DisplayText("Pumpkin Pi.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Why are graveyards so noisy?");
+    LongDelay();
+    DisplayText("Because of all the coffin.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What does a zombie vegetarian eat?");
+    LongDelay();
+    DisplayText("GRAAAAAINS!");
+    FixedDelay(2);
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Why did the ghost go to the doctor?");
+    LongDelay();
+    DisplayText("He was feeling a little boo-hoo.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo What kind of music do mummies like?");
+    LongDelay();
+    DisplayText("Wrap music.");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("echo How do trees access the Internet?");
+    LongDelay();
+    DisplayText("They log in.");
+    LongDelay();
+    FixedDelay(2);
+
+    Separator();
+
+    PromptText();
+    TypeText("echo Initializing final joke...");
+    LongDelay();
+    DisplayText("ERROR: joke quality threshold exceeded");
+    DisplayText("WARNING: spouse terminal eyeroll detected");
+    LongDelay();
+
+    Separator();
+
+    PromptText();
+    TypeText("exit");
+    LongDelay();
+
+    DisplayText("ERROR: Dad jokes are a protected system service.");
+    ShortDelay();
+    DisplayText("Refusing shutdown request.");
+    LongDelay();
+
+    Separator();
+
+    DisplayText("PumpkinOS Joke Module Complete. User may stop rolling eyes in:");
+    ShortDelay();
+    DisplayText("5");
+    ShortDelay();
+    DisplayText("4");
+    ShortDelay();
+    DisplayText("3");
+    ShortDelay();
+    DisplayText("2");
+    LongDelay();
+    DisplayText("1");
+    
+    FixedDelay(2);
+
+    system("clear");
+
+    currentState = STATE_BOOT;
+}
