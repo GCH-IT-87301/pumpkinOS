@@ -292,6 +292,23 @@ Several hours of software debugging were resolved with a soldering iron.
 
 As is tradition.
 
+### Hardware Status Indicators
+
+PumpkinOS includes two diagnostic LEDs:
+
+- **PC13** - Undead heartbeat monitor
+  - Blinking: Brain activity detected.
+  - Not blinking: Brain may have been eaten.
+
+- **PB4** - Disk activity simulator
+  - Random bursts indicate critical background tasks such as:
+    - Ghost indexing
+    - Printer diagnostics
+    - Skeleton database maintenance
+    - Dad joke compilation
+
+Both indicators are completely decorative and should not be interpreted as evidence of actual productivity.
+
 ---
 
 ## Current status
