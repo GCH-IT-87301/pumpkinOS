@@ -21,6 +21,38 @@ void ShowJokeScreen(void);
 
 static int bootCount = 0;
 
+static PumpkinScene_t currentScene = SCENE_BIOS;
+
+void PumpkinOS_Update(void)
+{
+    switch(currentScene)
+    {
+        case SCENE_BIOS:
+            ShowBIOSScreen();
+            break;
+
+        case SCENE_BOOT:
+            ShowBootScreen();
+            break;
+
+        case SCENE_PRINTER:
+            ShowPrinterScreen();
+            break;
+
+        case SCENE_GHOST:
+            ShowGhostScreen();
+            break;
+
+        case SCENE_TICKET:
+            ShowTicketScreen();
+            break;
+
+        case SCENE_JOKE:
+            ShowJokeScreen();
+            break;
+    }
+}
+
 void DisplayText(const char *text)
 {
     PumpkinConsole_Print(text);
@@ -40,11 +72,12 @@ void Separator(void)
 void PumpkinOS_Start(void)
 {
 	//FOR DEBUG TESTING PUT DESIRED START SCREEN HERE
-	ShowBIOSScreen();
+	currentScene = SCENE_BIOS;
 }
 
 void ShowBIOSScreen(void)
 {
+
 	  /* create the pumpkin */
 
 	  /* Pumpkin body */
@@ -115,7 +148,8 @@ void ShowBIOSScreen(void)
 
 	  HAL_Delay(3000);
 
-	  ShowBootScreen();
+	  currentScene = SCENE_BOOT;
+	  return;
 }
 
 void ShowBootScreen(void)
@@ -183,7 +217,8 @@ void ShowBootScreen(void)
 
     DisplayText("Boot process remains unsuccessful. Loading Recovery Console.");
 
-    ShowPrinterScreen();
+    currentScene = SCENE_PRINTER;
+    return;
 }
 
 
@@ -281,7 +316,8 @@ void ShowPrinterScreen(void)
 
 	HAL_Delay(3000);
 
-	ShowGhostScreen();
+	currentScene = SCENE_GHOST;
+	return;
 }
 
 void ShowGhostScreen(void)
@@ -364,7 +400,8 @@ void ShowGhostScreen(void)
     DisplayText("clear");
     PumpkinConsole_Clear();
 
-    ShowTicketScreen();
+    currentScene = SCENE_TICKET;
+    return;
 }
 
 void ShowTicketScreen(void)
@@ -584,7 +621,8 @@ void ShowTicketScreen(void)
 
     LongDelay();
 
-	ShowJokeScreen();
+    currentScene = SCENE_JOKE;
+    return;
 }
 
 void ShowJokeScreen(void)
@@ -753,5 +791,6 @@ void ShowJokeScreen(void)
     LongDelay();
 
 
-	ShowBIOSScreen();
+    currentScene = SCENE_BIOS;
+    return;
 }

@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define LCD_RS_GPIO_Port GPIOB
 #define LCD_RST_Pin GPIO_PIN_1
 #define LCD_RST_GPIO_Port GPIOB
+#define LED_BLINK_Pin GPIO_PIN_4
+#define LED_BLINK_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
